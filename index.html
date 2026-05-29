@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra exatamente onde o lucro está vazando no seu negócio. O Programa Radar do Lucro analisa produto a produto, compara com seu setor e entrega um plano de ação para +30% de lucratividade em 90 dias.">
+  <title>Radar do Lucro — Programa de Aceleração | Hands on</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- CSS Crítico Inline (above-fold) -->
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;color:#ede8dc;background:#0d0c09;-webkit-font-smoothing:antialiased}
+    .announce-bar{background:#c8a84a;border-bottom:2px solid #b5952f;padding:8px 20px;text-align:center;font-size:.8rem;font-weight:700;color:#0d0c09;letter-spacing:.06em;text-transform:uppercase}
+    .navbar{position:sticky;top:0;z-index:100;background:#0d0c09;border-bottom:1px solid transparent;padding:12px 0;transition:border-color .25s,box-shadow .25s}
+    .navbar--scrolled{border-bottom-color:#27231a;box-shadow:0 2px 12px rgba(0,0,0,.6)}
+    .navbar__inner{display:flex;align-items:center;justify-content:space-between;max-width:1060px;margin:0 auto;padding:0 24px;gap:16px}
+    .navbar__brand-logo{height:64px;width:auto;display:block;flex-shrink:0}
+    .navbar__links{display:flex;align-items:center;gap:28px;flex:1;justify-content:center}
+    .navbar__link{color:#ede8dc;font-size:.9rem;font-weight:500;text-decoration:none;opacity:.75;transition:opacity .15s;white-space:nowrap}
+    .navbar__link:hover{opacity:1}
+    .hero{background:#0d0c09;color:#ede8dc;padding:72px 0 64px;text-align:center}
+    .container{width:100%;max-width:680px;margin:0 auto;padding:0 20px}
+    .hero__eyebrow{display:inline-block;background:rgba(200,168,74,.12);color:#c8a84a;font-size:.8125rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(200,168,74,.25)}
+    .hero__title{font-size:clamp(1.75rem,4vw,2.625rem);font-weight:800;line-height:1.2;letter-spacing:-.5px;margin-bottom:20px;color:#ede8dc}
+    .hero__title em{color:#c8a84a;font-style:normal}
+    .hero__sub{font-size:1.0625rem;color:#5c5446;max-width:560px;margin:0 auto 36px;line-height:1.7}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:8px;font-size:.9375rem;font-weight:700;font-family:inherit;cursor:pointer;border:2px solid transparent;transition:background .15s,color .15s,transform .1s;text-decoration:none;white-space:nowrap;min-height:48px}
+    .btn--primary{background:#c8a84a;color:#0d0c09;border-color:#c8a84a;font-weight:800;box-shadow:0 2px 8px rgba(200,168,74,.25)}
+    .btn--primary:hover{background:#b5952f;border-color:#b5952f}
+    .btn--lg{padding:16px 32px;font-size:1.0625rem;border-radius:16px}
+    .btn--full{width:100%}
+    .hero__cta-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .hero__disclaimer{font-size:.8125rem;color:#4a4438}
+  </style>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════ FAIXA TOPO ════════════════════════════ -->
+<div class="announce-bar" id="announce-bar" role="banner" aria-label="Credencial da empresa">
+  🏆 A maior empresa de gestão financeira do Brasil
+</div>
+
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar" aria-label="Navegação principal">
+  <div class="navbar__inner">
+    <a href="#" aria-label="Radar do Lucro — Programa de Aceleração">
+      <img
+        src="logos/radar-do-lucro-aceleracao.jpeg"
+        alt="Radar do Lucro — Programa de Aceleração"
+        class="navbar__brand-logo"
+        loading="eager"
+      >
+    </a>
+    <div class="navbar__links">
+      <a href="#pains" class="navbar__link">Para quem é</a>
+      <a href="#metodo" class="navbar__link">Metodologia</a>
+      <a href="#cases" class="navbar__link">Cases</a>
+      <a href="#faq" class="navbar__link">FAQ</a>
+    </div>
+    <a href="#aplicar" class="btn btn--primary" style="padding:10px 22px;font-size:.9rem;border-radius:100px;">Quero aplicar</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <span class="hero__eyebrow">Programa de Aceleração</span>
+    <h1 class="hero__title" id="hero-title">
+      Você vende.<br>
+      O dinheiro some.<br>
+      <em>Descubra exatamente onde o lucro está vazando.</em>
+    </h1>
+    <p class="hero__sub">
+      O Programa de Aceleração Radar do Lucro analisa seu negócio produto a produto,
+      compara com as melhores empresas do seu setor e entrega um plano de ação
+      concreto para você aumentar a lucratividade em pelo menos
+      <strong style="color:#f1f5f9">30% em 90 dias</strong>, sem precisar vender mais.
+    </p>
+    <div class="hero__cta-wrap">
+      <a href="#aplicar" class="btn btn--primary btn--lg">
+        Quero descobrir onde meu lucro está vazando →
+      </a>
+    </div>
+
+    <!-- MELHORIA 1 — Prova social integrada ao hero -->
+    <div class="hero-trust" aria-label="Prova social">
+      <div class="hero-trust__avatars" aria-hidden="true">
+        <div class="hero-trust__avatar hero-trust__avatar--a">JS</div>
+        <div class="hero-trust__avatar hero-trust__avatar--b">MR</div>
+        <div class="hero-trust__avatar hero-trust__avatar--c">AF</div>
+        <div class="hero-trust__avatar hero-trust__avatar--d">PT</div>
+        <div class="hero-trust__avatar hero-trust__avatar--e">CL</div>
+      </div>
+      <div>
+        <div class="hero-trust__stars" aria-label="Avaliação 4.9 de 5">★★★★★</div>
+        <div class="hero-trust__rating"><strong>4.9/5</strong> de avaliação</div>
+      </div>
+      <div class="hero-trust__divider" aria-hidden="true"></div>
+      <div class="hero-trust__count"><strong>+110 empresas</strong> já passaram pelo Radar</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PROOF BAR ════════════════════════════ -->
+<div class="proof-bar" aria-label="Resultados do programa">
+  <div class="proof-bar__inner">
+    <div class="proof-stat">
+      <div class="proof-stat__num">+30%</div>
+      <div class="proof-stat__label">meta de lucro em 90 dias</div>
+    </div>
+    <div class="proof-bar__divider" aria-hidden="true"></div>
+    <div class="proof-stat">
+      <div class="proof-stat__num">7</div>
+      <div class="proof-stat__label">encontros de implementação</div>
+    </div>
+    <div class="proof-bar__divider" aria-hidden="true"></div>
+    <div class="proof-stat">
+      <div class="proof-stat__num">3</div>
+      <div class="proof-stat__label">meses de duração</div>
+    </div>
+    <div class="proof-bar__divider" aria-hidden="true"></div>
+    <div class="proof-stat">
+      <div class="proof-stat__num">100%</div>
+      <div class="proof-stat__label">aplicado, não teórico</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CLIENTS BAR ══════════════════════════ -->
+<!-- MELHORIA 3 — Logo strip de clientes. Substitua os nomes pelos seus clientes reais. -->
+<div class="clients-bar" aria-label="Empresas que já passaram pelo Radar do Lucro">
+  <p class="clients-bar__label">Empresas que já passaram pelo Radar:</p>
+  <div class="clients-carousel__wrapper">
+    <div class="clients-carousel__track">
+      <div class="clients-carousel__item">
+        <img src="logos/LogosClientes/logo-annunziato.png" alt="Annunziato" class="client-logo">
+      </div>
+      <div class="clients-carousel__item">
+        <img src="logos/LogosClientes/logo-bco.png" alt="BCO" class="client-logo">
+      </div>
+      <div class="clients-carousel__item">
+        <img src="logos/LogosClientes/logo-moura-netto.png" alt="Moura Netto" class="client-logo">
+      </div>
+      <div class="clients-carousel__item">
+        <img src="logos/LogosClientes/Logo-PowerMax.png" alt="PowerMax" class="client-logo">
+      </div>
+      <div class="clients-carousel__item">
+        <img src="logos/LogosClientes/LogoIcaraiVeterinario.png" alt="Icaraí Veterinário" class="client-logo">
+      </div>
+      <div class="clients-carousel__item">
+        <img src="logos/LogosClientes/LogosCannaCare.png" alt="CannaCare" class="client-logo">
+      </div>
+      <!-- Duplicadas para loop contínuo -->
+      <div class="clients-carousel__item" aria-hidden="true">
+        <img src="logos/LogosClientes/logo-annunziato.png" alt="" class="client-logo">
+      </div>
+      <div class="clients-carousel__item" aria-hidden="true">
+        <img src="logos/LogosClientes/logo-bco.png" alt="" class="client-logo">
+      </div>
+      <div class="clients-carousel__item" aria-hidden="true">
+        <img src="logos/LogosClientes/logo-moura-netto.png" alt="" class="client-logo">
+      </div>
+      <div class="clients-carousel__item" aria-hidden="true">
+        <img src="logos/LogosClientes/Logo-PowerMax.png" alt="" class="client-logo">
+      </div>
+      <div class="clients-carousel__item" aria-hidden="true">
+        <img src="logos/LogosClientes/LogoIcaraiVeterinario.png" alt="" class="client-logo">
+      </div>
+      <div class="clients-carousel__item" aria-hidden="true">
+        <img src="logos/LogosClientes/LogosCannaCare.png" alt="" class="client-logo">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DOR ══════════════════════════════════ -->
+<section id="pains" class="section" aria-labelledby="pain-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Você se reconhece?</p>
+      <h2 class="section-title" id="pain-title">Quando a empresa vende mas o lucro não aparece</h2>
+    </div>
+
+    <ul class="pain-list" role="list">
+      <li class="pain-item">
+        <span class="pain-item__icon" aria-hidden="true">💸</span>
+        <span>"Sei quanto vendi no mês, mas no final o saldo na conta não reflete. Basicamente, meu controle tem sido esse."</span>
+      </li>
+      <li class="pain-item">
+        <span class="pain-item__icon" aria-hidden="true">🌀</span>
+        <span>"Tenho um ticket, sei que dá lucro porque sobra dinheiro no banco, mas não tenho noção de linha por linha. Não sei qual produto realmente me sustenta."</span>
+      </li>
+      <li class="pain-item">
+        <span class="pain-item__icon" aria-hidden="true">📊</span>
+        <span>Você paga a contabilidade todo mês. Mas ela só entrega imposto, boleto e nota fiscal. Nada que te diga o que fazer para lucrar mais.</span>
+      </li>
+      <li class="pain-item">
+        <span class="pain-item__icon" aria-hidden="true">📉</span>
+        <span>Você tenta vender mais para resolver, mas o problema cresce junto. Mais vendas, mais custo, mesmo lucro.</span>
+      </li>
+      <li class="pain-item">
+        <span class="pain-item__icon" aria-hidden="true">🔄</span>
+        <span>Você está há anos no mesmo patamar. A empresa nem quebra nem cresce de verdade. E você já não consegue identificar o motivo.</span>
+      </li>
+    </ul>
+
+    <div class="pain-bridge" role="note">
+      <strong>O problema não é quanto você vende.</strong><br>
+      É que você não sabe qual produto te dá lucro de verdade. E qual está te custando dinheiro agora mesmo.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ AS 3 MENTIRAS ════════════════════════ -->
+<!-- MELHORIA 2 — Seção de quebra de crença. Baseado no padrão "As 4 Mentiras" do template FSS. -->
+<section class="lies-section" aria-labelledby="lies-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">O que está te prendendo</p>
+      <h2 class="section-title" id="lies-title">As 3 mentiras que travam o lucro do seu negócio</h2>
+      <p class="section-sub">Você acredita em alguma delas. E enquanto acreditar, o lucro continua travado.</p>
+    </div>
+
+    <div class="lies-grid">
+      <div class="lie-card">
+        <div class="lie-card__num" aria-hidden="true">1</div>
+        <div class="lie-card__content">
+          <p class="lie-card__lie">"Preciso vender mais para lucrar mais."</p>
+          <p class="lie-card__reality">
+            Mais vendas com margem negativa = mais prejuízo. Empresários que dobram o faturamento
+            sem corrigir a precificação saem com dívida maior, não com lucro maior.
+            <strong>O problema não é volume. É o que sobra de cada venda.</strong>
+          </p>
+        </div>
+      </div>
+      <div class="lie-card">
+        <div class="lie-card__num" aria-hidden="true">2</div>
+        <div class="lie-card__content">
+          <p class="lie-card__lie">"Minha contabilidade me diz o que preciso saber."</p>
+          <p class="lie-card__reality">
+            Sua contabilidade foi feita para cumprir obrigações fiscais: imposto, boleto, nota fiscal.
+            Ela não foi desenvolvida para gerar visibilidade de gestão e não te diz o que fazer.
+            <strong>Você está usando duas ferramentas com objetivos completamente diferentes como se fossem a mesma coisa.</strong>
+          </p>
+        </div>
+      </div>
+      <div class="lie-card">
+        <div class="lie-card__num" aria-hidden="true">3</div>
+        <div class="lie-card__content">
+          <p class="lie-card__lie">"Margem baixa é característica do meu setor."</p>
+          <p class="lie-card__reality">
+            O benchmarking mostra o contrário: a maioria das empresas está abaixo da média do setor
+            sem saber. Quando fazemos a comparação, empresários que "achavam que era normal"
+            descobrem que estão deixando 5 a 10 pontos percentuais de margem na mesa todo mês.
+            <strong>Não é o setor. É o diagnóstico que você nunca fez.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ POR QUE A CONTABILIDADE NÃO RESOLVE ═ -->
+<section class="section section--alt" aria-labelledby="compare-title">
+  <div class="container container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">A raiz do problema</p>
+      <h2 class="section-title" id="compare-title">Sua contabilidade não foi feita para isso</h2>
+      <p class="section-sub">
+        Ela olha para o passado e entrega o obrigatório. Não foi desenvolvida
+        para gerar visibilidade de gestão. Ela simplesmente não diz ao empresário o que fazer.
+      </p>
+    </div>
+
+    <div class="comparison" role="table" aria-label="Comparação entre contabilidade e Radar do Lucro">
+      <div class="comparison__col comparison__col--bad" role="cell">
+        <p class="comparison__head">Contabilidade tradicional</p>
+        <ul class="comparison__list" role="list">
+          <li class="comparison__item">Diz quanto você pagou de imposto</li>
+          <li class="comparison__item">Entrega relatórios que você não sabe interpretar</li>
+          <li class="comparison__item">Analisa a empresa como um bloco, nunca produto a produto</li>
+          <li class="comparison__item">Não compara sua empresa com o mercado</li>
+          <li class="comparison__item">Não diz o que fazer. Só mostra o que aconteceu</li>
+        </ul>
+      </div>
+      <div class="comparison__col comparison__col--good" role="cell">
+        <p class="comparison__head">Radar do Lucro</p>
+        <ul class="comparison__list" role="list">
+          <li class="comparison__item">Diz por que sua margem está em 10% quando deveria estar em 17%</li>
+          <li class="comparison__item">Entrega diagnóstico produto a produto que você entende</li>
+          <li class="comparison__item">Usa o Farol do Lucro: verde, amarelo ou vermelho por produto</li>
+          <li class="comparison__item">Compara seus indicadores com empresas do mesmo setor</li>
+          <li class="comparison__item">Entrega o plano de ação e te acompanha na implementação</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ MECANISMO ════════════════════════════ -->
+<!-- MELHORIA 5 — Seção escura para ritmo visual (alternância claro/escuro) -->
+<!-- <section class="section--dark-mechanism" aria-labelledby="mechanism-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">A metodologia M.A.P</p>
+      <h2 class="section-title" id="mechanism-title">Por que funciona quando o que você tentou antes <em>não funcionou</em></h2>
+      <p class="section-sub">
+        Três razões específicas que a contabilidade e cursos genéricos não entregam.
+      </p>
+    </div>
+
+    <div class="mechanism-grid">
+      <div class="mechanism-card">
+        <div class="mechanism-card__num" aria-hidden="true">1</div>
+        <div>
+          <h3 class="mechanism-card__title">Diagnóstico produto a produto: o Farol do Lucro</h3>
+          <p class="mechanism-card__body">
+            Não analisamos a empresa como um bloco. Vamos linha por linha, cada produto, cada serviço,
+            e mostramos qual está no verde, amarelo ou vermelho de lucratividade.
+            Você vê exatamente onde está o vazamento. Sem achismo, sem "parece que".
+          </p>
+          <div class="farol" aria-label="Classificação do Farol do Lucro">
+            <div class="farol__item farol__item--green">🟢 Verde<span class="farol__item__label">Lucrativo, manter e escalar</span></div>
+            <div class="farol__item farol__item--yellow">🟡 Atenção<span class="farol__item__label">Margem para melhorar</span></div>
+            <div class="farol__item farol__item--red">🔴 Vermelho<span class="farol__item__label">Está te custando dinheiro</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mechanism-card">
+        <div class="mechanism-card__num" aria-hidden="true">2</div>
+        <div>
+          <h3 class="mechanism-card__title">Benchmarking do seu ramo de atividade</h3>
+          <p class="mechanism-card__body">
+            Comparamos os seus indicadores (margem de contribuição, ponto de equilíbrio,
+            precificação) com empresas do mesmo setor. Você para de achar que "está normal"
+            quando na verdade está abaixo do que deveria. Você vai descobrir exatamente quanto está deixando de lucrar.
+          </p>
+        </div>
+      </div>
+
+      <div class="mechanism-card">
+        <div class="mechanism-card__num" aria-hidden="true">3</div>
+        <div>
+          <h3 class="mechanism-card__title">Plano de ação aplicado: você faz junto, não sozinho</h3>
+          <p class="mechanism-card__body">
+            Não entregamos um relatório para você interpretar sozinho. Os 7 encontros quinzenais
+            conduzem a implementação da metodologia M.A.P
+            (Mentalidade Lucrativa, Arquitetura de Negócio e Performance do Lucro)
+            com você fazendo junto. É o que nenhum curso gravado ou consultoria pontual entrega.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ═══════════════════════════════ METODOLOGIA M.A.P ════════════════════ -->
+<section id="metodo" class="section section--map" aria-labelledby="map-title">
+  <div class="container container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">A Metodologia do Programa de Aceleração</p>
+      <h2 class="section-title" id="map-title">M.A.P — os 3 pilares que transformam<br><em>faturamento em lucro de verdade</em></h2>
+      <p class="section-sub">6 módulos aplicados em 90 dias, com você implementando junto ao longo dos 7 encontros quinzenais.</p>
+    </div>
+
+    <!-- Pilares -->
+    <div class="map-pillars" aria-label="Os 3 pilares da metodologia M.A.P">
+      <div class="map-pillar">
+        <div class="map-pillar__letter">M</div>
+        <div class="map-pillar__name">Mentalidade Lucrativa</div>
+        <div class="map-pillar__desc">Empresário deixa de ser operador e vira estrategista do próprio negócio.</div>
+      </div>
+      <div class="map-pillar__arrow" aria-hidden="true">→</div>
+      <div class="map-pillar">
+        <div class="map-pillar__letter">A</div>
+        <div class="map-pillar__name">Arquitetura de Negócio</div>
+        <div class="map-pillar__desc">Visibilidade total dos números, margens e onde o lucro está vazando.</div>
+      </div>
+      <div class="map-pillar__arrow" aria-hidden="true">→</div>
+      <div class="map-pillar">
+        <div class="map-pillar__letter">P</div>
+        <div class="map-pillar__name">Performance do Lucro</div>
+        <div class="map-pillar__desc">Ações certas no momento certo para chegar no lucro que a empresa deve ter.</div>
+      </div>
+    </div>
+
+    <!-- Módulos -->
+    <div class="map-modules">
+
+      <!-- M -->
+      <div class="map-module map-module--full" aria-labelledby="mod-m">
+        <div class="map-module__pillar-tag map-module__pillar-tag--m">M · Mentalidade Lucrativa</div>
+        <div class="map-module__num" aria-hidden="true">01</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-m">Mentalidade Lucrativa</h3>
+          <p class="map-module__body">
+            A maioria dos empresários ainda opera no modo "faço tudo eu mesmo". Antes de mexer em qualquer número, trabalhamos o Tripé Mental: Visão, Identidade e Propósito. Porque sua empresa tem o tamanho da sua mentalidade.
+          </p>
+          <div class="map-module__tags">
+            <span>Visão de negócio</span>
+            <span>Identidade empresarial</span>
+            <span>Propósito estratégico</span>
+            <span>De operador a estrategista</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- A — 4 módulos -->
+      <div class="map-module" aria-labelledby="mod-a1">
+        <div class="map-module__pillar-tag map-module__pillar-tag--a">A · Arquitetura</div>
+        <div class="map-module__num" aria-hidden="true">02</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-a1">Mapa do Lucro</h3>
+          <p class="map-module__body">
+            Você terá clareza total sobre cada número do seu negócio: margem de contribuição, ponto de equilíbrio, lucro operacional e líquido, despesas fixas e variáveis. E principalmente onde está o vazamento invisível.
+          </p>
+          <div class="map-module__tags">
+            <span>Margem de contribuição</span>
+            <span>Ponto de equilíbrio</span>
+            <span>Lucro operacional e líquido</span>
+            <span>Vazamento invisível</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-module" aria-labelledby="mod-a2">
+        <div class="map-module__pillar-tag map-module__pillar-tag--a">A · Arquitetura</div>
+        <div class="map-module__num" aria-hidden="true">03</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-a2">Benchmark de Mercado</h3>
+          <p class="map-module__body">
+            Comparamos seus indicadores com empresas do mesmo ramo. Você para de achar que "é normal" e descobre exatamente onde está em relação ao mínimo, atual e máximo do seu setor — e quais ações te colocam no jogo.
+          </p>
+          <div class="map-module__tags">
+            <span>Margens do seu ramo</span>
+            <span>Comparação de indicadores</span>
+            <span>Potencial de melhoria</span>
+            <span>Limites por indicador</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-module" aria-labelledby="mod-a3">
+        <div class="map-module__pillar-tag map-module__pillar-tag--a">A · Arquitetura</div>
+        <div class="map-module__num" aria-hidden="true">04</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-a3">Farol do Lucro</h3>
+          <p class="map-module__body">
+            Análise de margem produto a produto. Cada item do seu mix recebe uma classificação: vermelho (drena caixa a cada venda), amarelo (mal cobre os custos) ou verde (verdadeiro gerador de resultado). Você enxerga o que estava invisível.
+          </p>
+          <div class="map-module__tags">
+            <span class="map-module__tag--red">🔴 Produtos no prejuízo</span>
+            <span class="map-module__tag--yellow">🟡 No limite</span>
+            <span class="map-module__tag--green">🟢 Realmente lucrativos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-module" aria-labelledby="mod-a4">
+        <div class="map-module__pillar-tag map-module__pillar-tag--a">A · Arquitetura</div>
+        <div class="map-module__num" aria-hidden="true">05</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-a4">Precificação Estratégica</h3>
+          <p class="map-module__body">
+            Preço certo é sinônimo de lucro. Você simula mudanças de preço e vê o impacto direto na margem, compara com a concorrência e descobre o preço ideal para cada produto ou serviço do seu mix.
+          </p>
+          <div class="map-module__tags">
+            <span>Simulação de preços</span>
+            <span>Comparação com concorrência</span>
+            <span>Preço ideal por produto</span>
+            <span>Oportunidade vira lucro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- P — 2 módulos -->
+      <div class="map-module" aria-labelledby="mod-p1">
+        <div class="map-module__pillar-tag map-module__pillar-tag--p">P · Performance</div>
+        <div class="map-module__num" aria-hidden="true">06</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-p1">Simulador do Lucro</h3>
+          <p class="map-module__body">
+            Antes de tomar qualquer decisão, você simula o impacto. Cada mudança em custo, despesa ou receita aparece no resultado final. Você sabe exatamente como chegar no lucro ideal da sua empresa — e o que fazer em cada macro despesa.
+          </p>
+          <div class="map-module__tags">
+            <span>Simulação de cada mudança</span>
+            <span>Lucro esperado por ação</span>
+            <span>Priorização de decisões</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-module" aria-labelledby="mod-p2">
+        <div class="map-module__pillar-tag map-module__pillar-tag--p">P · Performance</div>
+        <div class="map-module__num" aria-hidden="true">07</div>
+        <div class="map-module__content">
+          <h3 class="map-module__title" id="mod-p2">Método AR — Aumenta Receita + Reduz Despesa</h3>
+          <p class="map-module__body">
+            O fôlego que a empresa precisa para ter o lucro que sempre sonhou. Trabalhamos as duas alavancas simultaneamente: aumentar receita (mais clientes, ticket médio, frequência de compra) e reduzir despesa (custo de produto, custos de venda, despesas fixas).
+          </p>
+          <div class="map-module__tags">
+            <span>Aumentar receita</span>
+            <span>Reduzir despesas</span>
+            <span>Lucro real e consistente</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /map-modules -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PARA QUEM É ══════════════════════════ -->
+<section class="section" aria-labelledby="forwhom-title">
+  <div class="container container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">Antes de aplicar</p>
+      <h2 class="section-title" id="forwhom-title">Para quem o Programa de Aceleração foi feito (e para quem não foi)</h2>
+      <p class="section-sub">Somos diretos sobre isso porque nosso Programa de Aceleração só funciona com o perfil certo.</p>
+    </div>
+
+    <div class="forwhom-grid">
+      <div class="forwhom-col forwhom-col--yes">
+        <p class="forwhom-col__head">✅ É para você se…</p>
+        <ul class="forwhom-list" role="list">
+          <li>✓ Sua empresa fatura entre R$50k e R$2M/mês</li>
+          <li>✓ A empresa está operacionalmente estável (paga suas contas)</li>
+          <li>✓ Você sabe que o problema é lucratividade, não falta de vendas</li>
+          <li>✓ Você quer um plano de ação, não mais teoria</li>
+          <li>✓ Você está disposto a implementar durante os 90 dias</li>
+          <li>✓ Qualquer segmento: comércio, serviços ou indústria</li>
+        </ul>
+      </div>
+      <div class="forwhom-col forwhom-col--no">
+        <p class="forwhom-col__head">🚫 Não é para você se…</p>
+        <ul class="forwhom-list" role="list">
+          <li>✗ Sua empresa está endividada ou em crise financeira</li>
+          <li>✗ Você busca só conteúdo gravado, sem implementação</li>
+          <li>✗ Você quer consultoria para "olhar e recomendar" sem executar</li>
+          <li>✗ Seu faturamento ainda está abaixo de R$50k/mês</li>
+          <li>✗ Você espera resultado sem dedicação nos encontros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CASES ════════════════════════════════ -->
+<!-- <section id="cases" class="section section--alt" aria-labelledby="cases-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Resultados reais</p>
+      <h2 class="section-title" id="cases-title">O que acontece quando você sabe <em>exatamente</em> onde está o vazamento</h2>
+    </div>
+
+    <div class="cases-grid">
+
+      <div class="case-card">
+        <div class="case-card__header">
+          <p class="case-card__company">Empresa de Serviços · Interior de SP</p>
+          <span class="case-card__tag">Serviços</span>
+        </div>
+        <p class="case-card__quote">
+          Descobrimos que 3 dos nossos 8 serviços estavam no vermelho há mais de 2 anos.
+          A gente achava que eram o carro-chefe. Depois do Farol, cortamos dois e reprecificamos um.
+          Em 60 dias o lucro líquido dobrou. Sem crescer o faturamento.
+        </p>
+        <div class="case-metrics" aria-label="Métricas do resultado">
+          <div class="case-metric">
+            <div class="case-metric__val">+87%</div>
+            <div class="case-metric__label">lucro líquido</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric__val">60 dias</div>
+            <div class="case-metric__label">para ver resultado</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric__val">0%</div>
+            <div class="case-metric__label">crescimento de vendas necessário</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="case-card">
+        <div class="case-card__header">
+          <p class="case-card__company">Comércio · Grande SP</p>
+          <span class="case-card__tag">Comércio</span>
+        </div>
+        <p class="case-card__quote">
+          O benchmarking foi o choque que eu precisava. Minha margem de contribuição estava em 12%
+          quando a média do meu setor é 19%. Não era azar. Era precificação errada em produtos específicos.
+          Com o plano de ação conseguimos chegar em 17% em 90 dias.
+        </p>
+        <div class="case-metrics" aria-label="Métricas do resultado">
+          <div class="case-metric">
+            <div class="case-metric__val">12→17%</div>
+            <div class="case-metric__label">margem de contribuição</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric__val">90 dias</div>
+            <div class="case-metric__label">do diagnóstico ao resultado</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="case-card">
+        <div class="case-card__header">
+          <p class="case-card__company">Indústria · Sul do Brasil</p>
+          <span class="case-card__tag">Indústria</span>
+        </div>
+        <p class="case-card__quote">
+          Faturava R$320k/mês e não entendia por que sobrava tão pouco.
+          O Radar mostrou que nosso produto mais vendido tinha margem negativa depois de considerar
+          todos os custos diretos. Corrigimos a precificação e o resultado apareceu imediato.
+        </p>
+        <div class="case-metrics" aria-label="Métricas do resultado">
+          <div class="case-metric">
+            <div class="case-metric__val">+41%</div>
+            <div class="case-metric__label">margem operacional</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric__val">R$320k</div>
+            <div class="case-metric__label">faturamento mensal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:.875rem;color:#6b7280;margin-top:20px">
+      * Dados ilustrativos baseados em perfis de clientes. Substitua pelos seus cases reais antes de publicar.
+    </p>
+  </div>
+</section> -->
+
+<!-- ═══════════════════════════════ DEPOIMENTOS ══════════════════════════ -->
+<section class="section section--alt" aria-labelledby="testi-title">
+  <div class="container container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">O que dizem nossos clientes</p>
+      <h2 class="section-title" id="testi-title">Quem passou pelo Radar <em>já mudou o patamar</em></h2>
+    </div>
+
+    <div class="testimonials-list">
+
+      <!-- DEPOIMENTO 1 — Power Pump | Imagem esquerda · Conteúdo direita -->
+      <article class="testi-card" aria-label="Depoimento Power Pump">
+        <div class="testi-img">
+          <!-- SUBSTITUIR: troque pelo <img src="foto-power-pump.webp" alt="Power Pump"> quando tiver a imagem -->
+          <div class="testi-img-placeholder">
+            <span>Foto / Logo do Cliente</span>
+            <span style="font-size:.75rem;opacity:.6">Power Pump</span>
+          </div>
+        </div>
+        <div class="testi-body">
+          <div>
+            <p class="testi-company">Power Pump</p>
+            <!-- SUBSTITUIR: preencha o nome do fundador/sócio abaixo -->
+            <p class="testi-client">[Nome do Fundador] · Fundador / Sócio</p>
+          </div>
+          <div class="testi-stars" aria-label="Avaliação 5 de 5">★★★★★</div>
+          <blockquote class="testi-quote">
+            A Hands-On hoje pra gente faz o papel de talvez três, quatro funcionários que eu teria que ter dentro da minha empresa. Ela me dá realmente números, ferramentas — eu tenho o meu negócio na palma da minha mão. A gente consegue sentar e alinhar estratégias melhores pro nosso negócio, principalmente na parte financeira. Nos primeiros meses já tivemos excelentes resultados, surpreendentes até. A gente recomenda de verdade a Hands-On — você vai ver que vai mudar o patamar do seu negócio.
+          </blockquote>
+        </div>
+      </article>
+
+      <!-- DEPOIMENTO 2 — Prymex Concept | Conteúdo esquerda · Imagem direita -->
+      <article class="testi-card testi-card--reverse" aria-label="Depoimento Prymex Concept">
+        <div class="testi-body">
+          <div>
+            <p class="testi-company">Prymex Concept</p>
+            <!-- SUBSTITUIR: preencha o nome do fundador abaixo -->
+            <p class="testi-client">[Nome do Fundador] · Fundador / Arquiteto &amp; Engenheiro Ambiental</p>
+          </div>
+          <div class="testi-stars" aria-label="Avaliação 5 de 5">★★★★★</div>
+          <blockquote class="testi-quote">
+            A Hands-On foi uma luz no fim do túnel que nos ajudou a pegar os indicadores. Hoje eu tenho um panorama da empresa com todos os indicadores, fluxo de caixa, o que estamos gastando, o que podemos investir, a receita. O que a Hands-On agregou foi muito mais do que BPO — muitas vezes a gente não sabe o que precisa, e a Hands-On desperta essa necessidade. Tivemos um crescimento bem expressivo do primeiro para o segundo semestre.
+          </blockquote>
+        </div>
+        <div class="testi-img">
+          <!-- SUBSTITUIR: troque pelo <img src="foto-prymex.webp" alt="Prymex Concept"> quando tiver a imagem -->
+          <div class="testi-img-placeholder">
+            <span>Foto / Logo do Cliente</span>
+            <span style="font-size:.75rem;opacity:.6">Prymex Concept</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- DEPOIMENTO 3 — MV Intimate | Imagem esquerda · Conteúdo direita -->
+      <article class="testi-card" aria-label="Depoimento MV Intimate">
+        <div class="testi-img">
+          <!-- SUBSTITUIR: troque pelo <img src="foto-mv-intimate.webp" alt="MV Intimate"> quando tiver a imagem -->
+          <div class="testi-img-placeholder">
+            <span>Foto / Logo do Cliente</span>
+            <span style="font-size:.75rem;opacity:.6">MV Intimate</span>
+          </div>
+        </div>
+        <div class="testi-body">
+          <div>
+            <p class="testi-company">MV Intimate</p>
+            <!-- SUBSTITUIR: preencha o nome do fundador abaixo -->
+            <p class="testi-client">[Nome do Fundador] · Fundador / E-commerce &amp; Marketplace</p>
+          </div>
+          <div class="testi-stars" aria-label="Avaliação 5 de 5">★★★★★</div>
+          <blockquote class="testi-quote">
+            Junto com a Hands-On a gente conseguiu criar um sistema financeiro de verdade. A reunião mensal com o dashboard traz todas as métricas, porcentagens, gargalos, o que pode melhorar — isso nos deixa confortáveis para tomar as principais decisões. A Hands-On resolve uma dor muito grande do nosso mercado, que é a precificação. Ter a Hands-On fazendo a parte financeira me dá tempo para focar em outras funções importantes.
+          </blockquote>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PROCESSO CIRÚRGICO ══════════════════ -->
+<section class="section section--processo" aria-labelledby="processo-title">
+  <div class="container">
+
+    <!-- Texto topo — largura total -->
+    <div class="processo-text">
+      <h2 class="processo-headline" id="processo-title">
+        Não somos consultoria. <span style="color:var(--blue)">Não somos mentoria.</span> Não somos imersão.
+      </h2>
+      <p class="processo-sub">
+        Somos o <strong> programa de Aceleração Radar do Lucro </strong>: um processo cirúrgico de <strong>7 encontros</strong> para destravar margem em empresas que faturam acima de <strong>R$ 100 mil por mês.</strong> Os 7 encontros são:
+      </p>
+    </div>
+
+    <!-- Painel escuro com os 7 encontros -->
+    <div class="processo-panel" aria-label="Os 7 encontros do programa">
+      <div class="processo-grid">
+
+          <div class="processo-item">
+            <span class="processo-num" aria-hidden="true">01</span>
+            <div>
+              <p class="processo-name">Mentalidade Lucrativa</p>
+              <p class="processo-desc">Reprogramação estratégica do empresário</p>
+            </div>
+          </div>
+
+          <div class="processo-item">
+            <span class="processo-num" aria-hidden="true">02</span>
+            <div>
+              <p class="processo-name">Arquitetura + Radar</p>
+              <p class="processo-desc">Construção da estrutura real do lucro</p>
+            </div>
+          </div>
+
+          <div class="processo-item">
+            <span class="processo-num" aria-hidden="true">03</span>
+            <div>
+              <p class="processo-name">Mapa do Lucro + Benchmark</p>
+              <p class="processo-desc">Diagnóstico profundo e comparativo</p>
+            </div>
+          </div>
+
+          <div class="processo-item">
+            <span class="processo-num" aria-hidden="true">04</span>
+            <div>
+              <p class="processo-name">Precificação Estratégica</p>
+              <p class="processo-desc">Margem, markup, posicionamento</p>
+            </div>
+          </div>
+
+          <div class="processo-item">
+            <span class="processo-num" aria-hidden="true">05</span>
+            <div>
+              <p class="processo-name">Simulador + Método AR</p>
+              <p class="processo-desc">Aumenta Receita / Reduz Despesa</p>
+            </div>
+          </div>
+
+          <div class="processo-item">
+            <span class="processo-num" aria-hidden="true">06</span>
+            <div>
+              <p class="processo-name">Plano de Ação 90 dias</p>
+              <p class="processo-desc">Metas e execução</p>
+            </div>
+          </div>
+
+          <div class="processo-item processo-item--full">
+            <span class="processo-num" aria-hidden="true">07</span>
+            <div>
+              <p class="processo-name">Q&amp;A + Cases</p>
+              <p class="processo-desc">Exemplos reais de transformação</p>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SOBRE O RAPHAEL ══════════════════════ -->
+<section class="section" aria-labelledby="about-title">
+  <div class="container container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">Quem está por trás</p>
+      <h2 class="section-title" id="about-title">Raphael Girardi e a Hands On</h2>
+    </div>
+
+    <div class="about-card">
+      <!-- Coluna esquerda: foto -->
+      <div class="about-card__photo">
+        <img src="foto-raphael.webp" alt="Raphael Girardi, fundador da Hands On">
+      </div>
+
+      <!-- Coluna direita: informações -->
+      <div class="about-card__info">
+        <p class="about-name">Raphael Girardi</p>
+        <p class="about-role">Não é consultor financeiro. Não é coach de negócios.<br>É arquiteto de negócios lucrativos.</p>
+        <p class="about-bio">
+          Fundador da Hands On — Gestão Financeira Inteligente, que hoje gere mais de
+          <strong>R$ 500 milhões em gestão financeira</strong> para negócios de médio porte.
+          Com mais de 20 anos de experiência em gestão e mais de 10 mil horas em projetos de
+          consultoria, já acompanhou centenas de empresas — de R$ 2 milhões a mais de R$ 100 milhões
+          por ano — descobrindo onde o lucro estava vazando e construindo o plano para mudar isso.
+        </p>
+
+        <div class="about-stats about-stats--inline" aria-label="Números da Hands On">
+          <div class="about-stat">
+            <div class="about-stat__num">+110</div>
+            <div class="about-stat__label">empresas acompanhadas</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat__num">+25 anos</div>
+            <div class="about-stat__label">de experiência em gestão</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat__num">R$100Mi</div>
+            <div class="about-stat__label">faturamento/ano gerado para clientes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ AVALIAÇÕES GOOGLE ════════════════════ -->
+<section class="section google-reviews" aria-labelledby="reviews-title">
+  <div class="container container--wide">
+    <div class="section-header">
+      <p class="section-eyebrow">O que dizem no Google</p>
+      <h2 class="section-title" id="reviews-title">O que nossos clientes dizem</h2>
+      <span class="reviews-rating-badge" aria-label="Nota 5,0 de 5 estrelas">
+          <svg class="reviews-google-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          5,0
+          <span class="reviews-stars" aria-hidden="true">★★★★★</span>
+        </span>
+      <p class="section-sub">37 avaliações no Google · Nota máxima</p>
+    </div>
+  </div>
+
+  <!-- Carousel com scroll lateral -->
+  <div class="reviews-track-wrapper" role="region" aria-label="Avaliações de clientes no Google">
+    <button class="reviews-nav reviews-nav--prev" aria-label="Avaliações anteriores">&#8592;</button>
+    <div class="reviews-track" id="reviewsTrack">
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">PM</div>
+          <div>
+            <p class="review-card__name">Pedro Molina</p>
+            <p class="review-card__date">6 meses atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">A HandsOn elevou o nível da minha gestão financeira. Relatórios claros, processos organizados e suporte rápido. Hoje tomo decisões com muito mais segurança. Recomendo demais!</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">MA</div>
+          <div>
+            <p class="review-card__name">Maria Amaral</p>
+            <p class="review-card__date">8 meses atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">A Hands On é uma empresa que além de entregar resultados, entrega companheirismo ao longo de uma melhor saúde financeira. Aprendendo sobre uma gestão perene do negócio e que o planejamento pode ser feito em qualquer situação.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">SS</div>
+          <div>
+            <p class="review-card__name">Samya Saib</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Sobre a Hands On eu somente tenho a agradecer por toda assistência e profissionalismo nos serviços prestados! Eles contam com uma equipe preparada para auxiliar e organizar a gestão financeira das clínicas.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">AK</div>
+          <div>
+            <p class="review-card__name">André Kratochwill</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Encontramos na Hands On mais do que um simples suporte financeiro para o dia a dia. Eles conseguem entender onde está a dor da gestão e apresentam soluções gerenciais importantes para a tomada de decisão.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">FL</div>
+          <div>
+            <p class="review-card__name">Fabiana Louback</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Excelente empresa de gestão financeira, com atendimento humanizado, são super atenciosos, comprometidos e profissionais. Recomendo.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">IR</div>
+          <div>
+            <p class="review-card__name">Isene Reis</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Aqui está uma empresa que resolve as suas dores com transparência ❤️</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">OM</div>
+          <div>
+            <p class="review-card__name">Octaviano Mesquita</p>
+            <p class="review-card__date">6 meses atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Muito mais do que uma empresa de BPO, uma empresa de indicadores e acompanhamento financeiro preciso.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">PB</div>
+          <div>
+            <p class="review-card__name">Priscila Barcellos</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Gestão financeira com qualidade, eficiência e precisão! São excelentes, super recomendo!</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">BM</div>
+          <div>
+            <p class="review-card__name">Benjamin Oliveira Mello</p>
+            <p class="review-card__date">6 meses atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Trabalho impecável com comprometimento, rapidez e eficiência. Recomendo.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">GF</div>
+          <div>
+            <p class="review-card__name">Guilherme Figueira</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Competentes e ágeis. Recomendado.</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">WC</div>
+          <div>
+            <p class="review-card__name">Wanessa Cardoso</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Equipe Nota 1000! 👏🏻</blockquote>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__header">
+          <div class="review-card__avatar" aria-hidden="true">MM</div>
+          <div>
+            <p class="review-card__name">Monica Marinelle</p>
+            <p class="review-card__date">1 ano atrás</p>
+          </div>
+          <svg class="review-card__google" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="review-card__stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote class="review-card__text">Excelência em atendimento.</blockquote>
+      </article>
+
+    </div><!-- /reviews-track -->
+    <button class="reviews-nav reviews-nav--next" aria-label="Próximas avaliações">&#8594;</button>
+  </div>
+
+  <!-- Dots de navegação -->
+  <div class="reviews-dots" id="reviewsDots" aria-hidden="true"></div>
+</section>
+
+<!-- ═══════════════════════════════ FAQ ══════════════════════════════════ -->
+<section id="faq" class="section section--alt" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Perguntas frequentes</p>
+      <h2 class="section-title" id="faq-title">Antes de aplicar</h2>
+    </div>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq1" id="faq1-btn">
+          <span>Já tenho contador. Por que eu precisaria disso?</span>
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq1-btn">
+          Sua contabilidade foi feita para cumprir obrigações fiscais: imposto, folha, obrigações acessórias.
+          Ela não foi desenvolvida para gerar visibilidade de gestão e não diz o que você deve fazer para
+          aumentar seu lucro. O Radar do Lucro não substitui o contador: ele faz o que o contador não faz.
+          São ferramentas com objetivos completamente diferentes.
+        </div>
+      </div>
+
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq3" id="faq3-btn">
+          <span>Funciona para o meu segmento?</span>
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq3" role="region" aria-labelledby="faq3-btn">
+          Sim. O Programa de Aceleração atende comércio, serviços e indústria. O benchmarking de setor é feito especificamente
+          com empresas do seu ramo de atividade. Não comparamos uma indústria com um comércio.
+          A lógica de produto a produto funciona para qualquer empresa que tenha mais de uma linha de produto,
+          serviço ou SKU, que representa a grande maioria das empresas.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq4" id="faq4-btn">
+          <span>Quanto tempo preciso dedicar por semana?</span>
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq4" role="region" aria-labelledby="faq4-btn">
+          Os 7 encontros quinzenais online têm duração média de 90 minutos cada. Fora isso, você utilizará
+          a plataforma Radar do Lucro para inserir e acompanhar seus dados, o que leva em média 1 a 2 horas
+          por semana na fase ativa de implementação. O Programa de Aceleração foi desenhado para empresários com agenda
+          cheia: a implementação acontece no dia a dia do negócio, não paralelamente a ele.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq5" id="faq5-btn">
+          <span>O que acontece depois que eu preencho o formulário?</span>
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq5" role="region" aria-labelledby="faq5-btn">
+          Nossa equipe vai analisar seu perfil e entrar em contato em até 24h úteis pelo WhatsApp.
+          A conversa é uma análise de 30 minutos sem compromisso. A gente entende o seu negócio,
+          respondemos suas dúvidas e, se fizer sentido para os dois lados, apresentamos como o Programa de Aceleração
+          funciona para a sua realidade específica. Não tem pressão e não tem script de vendas.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq6" id="faq6-btn">
+          <span>Minha empresa já tem um financeiro interno. Isso muda algo?</span>
+          <span class="faq-btn__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq6" role="region" aria-labelledby="faq6-btn">
+          O Programa de Aceleração funciona muito bem com empresas que têm área financeira interna. Na prática,
+          o time financeiro se beneficia diretamente das ferramentas e do benchmarking. O que muda é
+          que o Programa de Aceleração acelera o que eles já tentam fazer, trazendo metodologia, plataforma e
+          acompanhamento especializado que o financeiro interno normalmente não tem acesso.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CTA FINAL ════════════════════════════ -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <div class="container">
+    <img src="logos/radar-do-lucro-aceleracao.jpeg" alt="Radar do Lucro — Programa de Aceleração" class="cta-section__logo">
+    <h2 class="cta-section__title" id="cta-title">
+      Quanto você está deixando de lucrar esse mês?
+    </h2>
+    <p class="cta-section__sub">
+      A resposta existe. São 2 minutos para descobrir se o Programa de aceleração
+      é o caminho certo para o seu negócio.
+    </p>
+    <a href="#aplicar" class="btn btn--white btn--lg">
+      Quero descobrir onde meu lucro está vazando →
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FORMULÁRIO DE APLICAÇÃO ══════════════ -->
+<section id="aplicar" class="section-apply" aria-labelledby="apply-title">
+  <div class="container">
+    <div class="apply-header">
+      <h2 class="apply-header__title" id="apply-title">Aplicar para o Programa de Aceleração</h2>
+      <p class="apply-header__sub">
+        Leva ~2 minutos · Sem compromisso · Nosso time entra em contato em até 24h úteis
+      </p>
+    </div>
+    <div id="funnel-wrapper" aria-live="polite" aria-label="Formulário de aplicação">
+      <!-- Motor do funil renderiza aqui via app.js -->
+      <noscript>
+        <p style="text-align:center;padding:32px;background:#fef2f2;border-radius:8px;color:#dc2626;">
+          Por favor, habilite o JavaScript para acessar o formulário de aplicação.
+        </p>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="footer">
+  <p>
+    © 2025 Hands on · Programa de Aceleração Radar do Lucro ·
+    <a href="#">Política de Privacidade</a>
+  </p>
+  <p style="margin-top:6px;font-size:.75rem;color:#334155">
+    Ao preencher o formulário, você concorda com nossa
+    <a href="#">Política de Privacidade</a>. Seus dados são usados exclusivamente para contato.
+  </p>
+</footer>
+
+<!-- ═══════════════════════════════ SCRIPTS ══════════════════════════════ -->
+<!-- Tracking (adicione os scripts do GA4 e Meta Pixel aqui se quiser) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+<!-- ═══════════════════════════════ STICKY CTA MOBILE ════════════════════ -->
+<!-- MELHORIA 6 — Aparece após 400px de scroll, some quando chega no formulário -->
+<div id="sticky-cta" class="sticky-cta" aria-hidden="true">
+  <a href="#aplicar" onclick="document.getElementById('sticky-cta').classList.remove('sticky-cta--visible')">
+    Quero descobrir onde meu lucro vaza →
+  </a>
+</div>
+
+<!-- ═══════════════════════════════ EXIT INTENT MODAL ════════════════════ -->
+<!-- MELHORIA 4 — Dispara quando o mouse sai pelo topo da janela (1x por sessão) -->
+<div id="exit-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Fechar">✕</button>
+    <p class="modal-eyebrow">Antes de ir</p>
+    <h2 class="modal-title" id="modal-title">
+      Você sabe quanto sua empresa deixou de lucrar esse mês?
+    </h2>
+    <p class="modal-body">
+      A resposta existe. São 2 minutos para descobrir.
+      Empresários com o mesmo perfil que o seu encontraram o vazamento e aumentaram
+      a margem em mais de 30% sem precisar vender mais.
+    </p>
+    <a href="#aplicar" class="btn btn--primary btn--lg modal-cta" id="modal-cta-btn">
+      Quero descobrir agora →
+    </a>
+    <button class="modal-dismiss">Não, vou continuar sem saber</button>
+  </div>
+</div>
+
+<script src="flow.js" defer></script>
+<script src="app.js" defer></script>
+
+<script defer>
+  // Navbar — transparente no topo, branca ao scrollar
+  (function () {
+    var nav = document.querySelector('.navbar');
+    function updateNav() {
+      nav.classList.toggle('navbar--scrolled', window.scrollY > 10);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  })();
+
+  // Modal — fechar ao clicar no CTA
+  document.addEventListener('DOMContentLoaded', function () {
+    var modalCta = document.getElementById('modal-cta-btn');
+    var modal = document.getElementById('exit-modal');
+    if (modalCta && modal) {
+      modalCta.addEventListener('click', function () {
+        modal.classList.remove('modal-overlay--visible');
+      });
+    }
+  });
+
+  // FAQ accordion
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.faq-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        var answerId = btn.getAttribute('aria-controls');
+        var answer = document.getElementById(answerId);
+
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (answer) answer.classList.toggle('open', !expanded);
+      });
+    });
+  });
+
+  // Google Reviews Carousel
+  document.addEventListener('DOMContentLoaded', function () {
+    var track   = document.getElementById('reviewsTrack');
+    var dotsEl  = document.getElementById('reviewsDots');
+    var btnPrev = document.querySelector('.reviews-nav--prev');
+    var btnNext = document.querySelector('.reviews-nav--next');
+    if (!track) return;
+
+    var cards     = track.querySelectorAll('.review-card');
+    var cardCount = cards.length;
+    var cardW     = 0;
+    var gap       = 16;
+
+    function getCardW() {
+      return cards[0] ? cards[0].offsetWidth + gap : 336;
+    }
+
+    // Criar dots
+    cards.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'reviews-dot' + (i === 0 ? ' reviews-dot--active' : '');
+      dot.setAttribute('aria-label', 'Ir para avaliação ' + (i + 1));
+      dot.addEventListener('click', function () { scrollTo(i); });
+      dotsEl.appendChild(dot);
+    });
+
+    function updateDots() {
+      cardW = getCardW();
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      var idx;
+      if (maxScroll <= 0) {
+        idx = 0;
+      } else if (track.scrollLeft >= maxScroll - 2) {
+        idx = cardCount - 1;
+      } else {
+        idx = Math.round(track.scrollLeft / cardW);
+      }
+      dotsEl.querySelectorAll('.reviews-dot').forEach(function (d, i) {
+        d.classList.toggle('reviews-dot--active', i === idx);
+      });
+      if (btnPrev) btnPrev.disabled = idx === 0;
+      if (btnNext) btnNext.disabled = idx >= cardCount - 1;
+    }
+
+    function scrollTo(idx) {
+      cardW = getCardW();
+      track.scrollTo({ left: idx * cardW, behavior: 'smooth' });
+    }
+
+    if (btnPrev) btnPrev.addEventListener('click', function () {
+      cardW = getCardW();
+      var idx = Math.round(track.scrollLeft / cardW);
+      scrollTo(Math.max(0, idx - 1));
+    });
+    if (btnNext) btnNext.addEventListener('click', function () {
+      cardW = getCardW();
+      var idx = Math.round(track.scrollLeft / cardW);
+      scrollTo(Math.min(cardCount - 1, idx + 1));
+    });
+
+    track.addEventListener('scroll', updateDots, { passive: true });
+    updateDots();
+
+    // Drag to scroll (desktop)
+    var isDragging = false, startX = 0, scrollStart = 0;
+    track.addEventListener('mousedown', function (e) {
+      isDragging = true; startX = e.pageX; scrollStart = track.scrollLeft;
+      track.style.userSelect = 'none';
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!isDragging) return;
+      track.scrollLeft = scrollStart - (e.pageX - startX);
+    });
+    document.addEventListener('mouseup', function () {
+      isDragging = false;
+      track.style.userSelect = '';
+    });
+  });
+</script>
+
+</body>
+</html>
