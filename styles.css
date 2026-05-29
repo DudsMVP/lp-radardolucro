@@ -516,6 +516,19 @@ ul, ol { padding-left: 1.25rem; }
 }
 .faq-answer.open { display: block; }
 
+/* ─── SECTION CTA (inline CTAs dentro das seções) ────────── */
+.section-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.section-cta__note {
+  margin-top: 10px;
+  font-size: .8125rem;
+  color: var(--text-3);
+}
+
 /* ─── CTA SECTION ────────────────────────────────────────── */
 .cta-section {
   background: var(--dark-3);
