@@ -263,7 +263,7 @@ function renderStep(step) {
 
   // Focus para acessibilidade
   const stepEl = wrapper.querySelector('#funnel-step');
-  if (stepEl) stepEl.focus();
+  if (stepEl) stepEl.focus({ preventScroll: true });
 
   // Listeners
   bindListeners(step);
