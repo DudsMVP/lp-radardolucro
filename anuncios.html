@@ -1304,21 +1304,38 @@
       document.getElementById('loading').classList.toggle('visible', v);
     }
 
-    function exportAd(elementId, filename, triggerLoading = true) {
-      return new Promise((resolve, reject) => {
-        if (triggerLoading) showLoading(true);
+    async function exportAd(elementId, filename, triggerLoading = true) {
+      if (triggerLoading) showLoading(true);
 
+      // Force-load every Montserrat weight used in the ad before capturing
+      try {
+        await Promise.all([
+          document.fonts.load('900 80px Montserrat'),
+          document.fonts.load('800 30px Montserrat'),
+          document.fonts.load('700 20px Montserrat'),
+          document.fonts.load('700 15px Montserrat'),
+          document.fonts.load('500 26px Montserrat'),
+        ]);
+      } catch (_) {}
+
+      return new Promise((resolve, reject) => {
         const element = document.getElementById(elementId);
         const clone   = element.cloneNode(true);
 
-        clone.style.transform = 'none';
-        clone.style.position  = 'fixed';
-        clone.style.top       = '0';
-        clone.style.left      = '0';
-        clone.style.zIndex    = '-9999';
-        clone.style.margin    = '0';
-        clone.style.width     = '1080px';
-        clone.style.height    = elementId === 'ad-square' ? '1080px' : '1350px';
+        clone.style.transform  = 'none';
+        clone.style.position   = 'fixed';
+        clone.style.top        = '0';
+        clone.style.left       = '0';
+        clone.style.zIndex     = '-9999';
+        clone.style.margin     = '0';
+        clone.style.width      = '1080px';
+        clone.style.height     = elementId === 'ad-square' ? '1080px' : '1350px';
+        clone.style.fontFamily = "'Montserrat', sans-serif";
+
+        // Override font-family on every descendant so html2canvas never falls back to Outfit
+        clone.querySelectorAll('*').forEach(el => {
+          el.style.fontFamily = "'Montserrat', sans-serif";
+        });
 
         document.body.appendChild(clone);
 
@@ -1327,36 +1344,35 @@
         const cloneImgs = clone.querySelectorAll('img');
         origImgs.forEach((origImg, i) => {
           if (cloneImgs[i]) {
-            cloneImgs[i].src = origImg.src;
+            cloneImgs[i].src        = origImg.src;
             cloneImgs[i].style.cssText = origImg.style.cssText;
           }
         });
 
-        document.fonts.ready.then(() => {
-          setTimeout(() => {
-            html2canvas(clone, {
-              width: 1080,
-              height: elementId === 'ad-square' ? 1080 : 1350,
-              scale: 1,
-              useCORS: true,
-              allowTaint: true,
-              backgroundColor: getComputedStyle(element).getPropertyValue('--ad-bg').trim() || '#0d0c09',
-              logging: false,
-            }).then(canvas => {
-              document.body.removeChild(clone);
-              const link = document.createElement('a');
-              link.download = filename;
-              link.href = canvas.toDataURL('image/png');
-              link.click();
-              if (triggerLoading) showLoading(false);
-              resolve();
-            }).catch(err => {
-              document.body.removeChild(clone);
-              if (triggerLoading) showLoading(false);
-              reject(err);
-            });
-          }, 300);
-        });
+        // Give the clone a full paint cycle so the forced font-family takes effect
+        setTimeout(() => {
+          html2canvas(clone, {
+            width:           1080,
+            height:          elementId === 'ad-square' ? 1080 : 1350,
+            scale:           1,
+            useCORS:         true,
+            allowTaint:      true,
+            backgroundColor: '#0d0c09',
+            logging:         false,
+          }).then(canvas => {
+            document.body.removeChild(clone);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            if (triggerLoading) showLoading(false);
+            resolve();
+          }).catch(err => {
+            document.body.removeChild(clone);
+            if (triggerLoading) showLoading(false);
+            reject(err);
+          });
+        }, 600);
       });
     }
 
