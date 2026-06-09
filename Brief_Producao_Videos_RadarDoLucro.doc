@@ -1,0 +1,197 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='UTF-8'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml>
+<![endif]-->
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #1a1a1a; margin: 2cm 2.5cm; }
+  h1 { font-size: 20pt; color: #1a1a1a; border-bottom: 3px solid #c8a84a; padding-bottom: 6pt; margin-bottom: 4pt; }
+  h2 { font-size: 14pt; color: #c8a84a; margin-top: 20pt; margin-bottom: 6pt; }
+  h3 { font-size: 11pt; color: #1a1a1a; margin-top: 12pt; margin-bottom: 4pt; }
+  .subtitle { font-size: 12pt; color: #555; margin-bottom: 4pt; }
+  .meta { font-size: 10pt; color: #777; margin-bottom: 16pt; }
+  table { border-collapse: collapse; width: 100%; margin: 10pt 0 16pt 0; }
+  th { background-color: #1a1a1a; color: #c8a84a; padding: 6pt 10pt; text-align: left; font-size: 10pt; }
+  td { border: 1px solid #ddd; padding: 5pt 10pt; font-size: 10pt; vertical-align: top; }
+  tr:nth-child(even) td { background-color: #f9f9f9; }
+  ul { margin: 4pt 0 10pt 0; padding-left: 18pt; }
+  li { margin-bottom: 3pt; font-size: 10pt; }
+  .divider { border: none; border-top: 1px solid #e0e0e0; margin: 18pt 0; }
+  .script-block { background: #f6f4ef; border-left: 4px solid #c8a84a; padding: 10pt 14pt; margin: 8pt 0; font-size: 10pt; }
+  .direction { color: #555; font-style: italic; font-size: 9.5pt; margin: 6pt 0 2pt 0; }
+  .spoken { font-size: 10.5pt; margin: 2pt 0 8pt 0; }
+  .file-tag { background: #1a1a1a; color: #c8a84a; padding: 2pt 7pt; font-size: 9pt; font-family: Courier, monospace; }
+  .checklist li { list-style: none; padding-left: 0; }
+  .checklist li::before { content: '\2610  '; font-size: 11pt; }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<h1>Brief de Produ&ccedil;&atilde;o &mdash; Criativos de V&iacute;deo</h1>
+<p class="subtitle"><strong>Radar do Lucro &middot; Hands On</strong></p>
+<p class="meta">
+  <strong>Objetivo da campanha:</strong> Levar o lead a visitar a LP e preencher o formul&aacute;rio para reuni&atilde;o de diagn&oacute;stico com o Closer.<br>
+  <strong>Apresentador:</strong> Raphael Girardi &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>Refer&ecirc;ncia POP:</strong> POP-289 + POP-394
+</p>
+
+<hr class="divider">
+
+<h2>Especifica&ccedil;&otilde;es T&eacute;cnicas</h2>
+<table>
+  <tr><th>Item</th><th>Especifica&ccedil;&atilde;o</th></tr>
+  <tr><td><strong>Tipo de grava&ccedil;&atilde;o</strong></td><td>S&oacute;cio Teleprompter (c&acirc;mera frontal)</td></tr>
+  <tr><td><strong>Formato Meta</strong></td><td>9:16 vertical &mdash; 1080x1920 (Feed + Reels)</td></tr>
+  <tr><td><strong>Formato YouTube</strong></td><td>16:9 horizontal &mdash; 1920x1080 (YouTube Ads)</td></tr>
+  <tr><td><strong>Dura&ccedil;&atilde;o</strong></td><td>60s a 1:30 por v&iacute;deo (m&aacute;ximo 2 min)</td></tr>
+  <tr><td><strong>Estilo</strong></td><td>Formal/empresarial, direto</td></tr>
+  <tr><td><strong>Legenda</strong></td><td>Branca, fonte Montserrat</td></tr>
+  <tr><td><strong>M&uacute;sica</strong></td><td>Trilha instrumental de reten&ccedil;&atilde;o (corporativa)</td></tr>
+</table>
+
+<hr class="divider">
+
+<h2>Setup de Grava&ccedil;&atilde;o</h2>
+
+<h3>C&acirc;mera e Enquadramento</h3>
+<ul>
+  <li>C&acirc;mera frontal com teleprompter posicionado na frente da lente (manter contato visual constante)</li>
+  <li>Plano fechado (busto/ombros) para vers&atilde;o Meta vertical</li>
+  <li>Plano americano para vers&atilde;o YouTube horizontal</li>
+  <li>&Acirc;ngulo levemente abaixo dos olhos (transmite autoridade)</li>
+  <li>Fundo limpo: escrit&oacute;rio arrumado, sala de reuni&atilde;o ou backdrop s&oacute;lido escuro</li>
+</ul>
+
+<h3>Ilumina&ccedil;&atilde;o</h3>
+<ul>
+  <li>Luz principal (key light) frontal ou levemente lateral, difusa</li>
+  <li>Fill light suave no lado oposto para eliminar sombras duras</li>
+  <li>Evitar janelas ou fontes de luz atr&aacute;s do apresentador</li>
+</ul>
+
+<h3>Vestu&aacute;rio</h3>
+<ul>
+  <li>Social ou social-esporte</li>
+  <li>Tons s&oacute;lidos escuros ou azul marinho</li>
+  <li>Evitar xadrez ou listras finas (interfere na c&acirc;mera)</li>
+</ul>
+
+<hr class="divider">
+
+<h2>Din&acirc;mica de Edi&ccedil;&atilde;o</h2>
+<ul>
+  <li><strong>Texto de impacto nos primeiros 3 segundos</strong> &mdash; vis&iacute;vel sem &aacute;udio</li>
+  <li><strong>Legendas sempre ativas</strong> &mdash; Montserrat branca, leg&iacute;vel em mobile</li>
+  <li><strong>Palavras-chave destacadas</strong> na tela quando ditas (cor dourada ou branco + negrito)</li>
+  <li><strong>Cortes din&acirc;micos</strong> a cada 5&ndash;8 segundos no m&iacute;nimo</li>
+  <li><strong>Trilha instrumental</strong> baixa no gancho, sobe levemente na credibilidade e CTA</li>
+  <li><strong>Frame final fixo</strong> com CTA em texto + logotipo Radar do Lucro / Hands On</li>
+</ul>
+
+<h3>Checklist de Entrega por V&iacute;deo</h3>
+<ul class="checklist">
+  <li>Vers&atilde;o 9:16 (Meta &mdash; Feed + Reels)</li>
+  <li>Vers&atilde;o 16:9 (YouTube Ads)</li>
+  <li>Legendas ativas (Montserrat branca)</li>
+  <li>Destaques de palavras-chave na tela</li>
+  <li>Trilha instrumental nas faixas de suporte</li>
+  <li>Logo Radar do Lucro / Hands On no frame final</li>
+  <li>CTA est&aacute;tico no &uacute;ltimo frame: &ldquo;Acesse o link&rdquo;</li>
+</ul>
+
+<!-- ==================== SCRIPT 01 ==================== -->
+<div class="page-break"></div>
+
+<h2>Script 01 &mdash; &Acirc;ngulo Dor</h2>
+<p><span class="file-tag">rdl_video_01_dor.mp4</span> &nbsp; Dura&ccedil;&atilde;o estimada: ~70s</p>
+
+<div class="script-block">
+  <p class="direction">[TELA PRETA + TEXTO: &ldquo;Voc&ecirc; sabe quanto vendeu esse m&ecirc;s.&rdquo;]</p>
+  <p class="direction">[C&Acirc;MERA LIGA &mdash; apresentador direto na c&acirc;mera]</p>
+
+  <p class="spoken">&ldquo;Voc&ecirc; sabe quanto sua empresa vendeu esse m&ecirc;s. Mas quando olha pro saldo na conta, o n&uacute;mero n&atilde;o bate. Onde foi parar o dinheiro?&rdquo;</p>
+
+  <p class="direction">[CORTE R&Aacute;PIDO] [DESTAQUE NA TELA: &ldquo;Onde foi o dinheiro?&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Esse &eacute; o problema de boa parte dos empres&aacute;rios que faturam bem mas n&atilde;o conseguem transformar venda em lucro de verdade. A contabilidade entrega imposto e boleto. Mas ningu&eacute;m te diz qual produto est&aacute; te sustentando e qual est&aacute; te custando dinheiro agora mesmo. Voc&ecirc; tenta vender mais. O custo cresce junto. E o lucro continua o mesmo.&rdquo;</p>
+
+  <p class="direction">[CORTE &mdash; tom muda para solu&ccedil;&atilde;o] [DESTAQUE NA TELA: &ldquo;Radar do Lucro&rdquo;]</p>
+
+  <p class="spoken">&ldquo;O Programa de Acelera&ccedil;&atilde;o Radar do Lucro foi criado exatamente para isso. A gente analisa seu neg&oacute;cio produto a produto, compara seus indicadores com as melhores empresas do seu setor e entrega um plano de a&ccedil;&atilde;o concreto para voc&ecirc; aumentar a lucratividade em pelo menos 30% em 90 dias.&rdquo;</p>
+
+  <p class="direction">[CORTE &mdash; credibilidade] [TEXTO NA TELA: &ldquo;Raphael Girardi | Hands On | +25 anos&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Eu sou Raphael Girardi, fundador da Hands On. J&aacute; ajudei mais de 110 empresas a encontrar onde o lucro estava vazando, sem precisar vender mais.&rdquo;</p>
+
+  <p class="direction">[CTA &mdash; logo Hands On aparece na tela] [TEXTO FIXO: &ldquo;Aplique agora &rarr; link na bio&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Se sua empresa fatura acima de 100 mil reais por m&ecirc;s e o lucro n&atilde;o aparece, acesse o link aqui e aplique para o Programa. S&atilde;o 2 minutos. Sem compromisso.&rdquo;</p>
+</div>
+
+<!-- ==================== SCRIPT 02 ==================== -->
+<div class="page-break"></div>
+
+<h2>Script 02 &mdash; Quebra de Cren&ccedil;a</h2>
+<p><span class="file-tag">rdl_video_02_quebra.mp4</span> &nbsp; Dura&ccedil;&atilde;o estimada: ~75s</p>
+
+<div class="script-block">
+  <p class="direction">[TELA PRETA + TEXTO: &ldquo;Vender mais n&atilde;o vai resolver.&rdquo;]</p>
+  <p class="direction">[C&Acirc;MERA LIGA &mdash; afirma&ccedil;&atilde;o direta, pausa proposital antes de continuar]</p>
+
+  <p class="spoken">&ldquo;Vender mais n&atilde;o vai resolver o seu problema.&rdquo;</p>
+
+  <p class="direction">[PAUSA DE 1 SEGUNDO &mdash; deixar a frase respirar] [DESTAQUE NA TELA: &ldquo;N&atilde;o &eacute; problema de volume.&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Eu sei que parece o contr&aacute;rio. Mas se a sua margem est&aacute; errada, mais vendas s&oacute; aumentam o preju&iacute;zo.&rdquo;</p>
+
+  <p class="direction">[CORTE]</p>
+
+  <p class="spoken">&ldquo;A maioria dos empres&aacute;rios acredita que o caminho &eacute; crescer o faturamento. S&oacute; que quando a gente abre os n&uacute;meros produto a produto, a hist&oacute;ria &eacute; outra. Tem produto no vermelho h&aacute; anos sendo vendido como se fosse o carro-chefe. Tem precifica&ccedil;&atilde;o feita no chute que corr&oacute;i a margem em sil&ecirc;ncio. E tem benchmarking que mostra que a empresa est&aacute; 5, 7, 10 pontos percentuais abaixo da m&eacute;dia do setor sem saber.&rdquo;</p>
+
+  <p class="direction">[CORTE &mdash; solu&ccedil;&atilde;o] [TEXTO NA TELA: &ldquo;Verde / Amarelo / Vermelho &mdash; Farol do Lucro&rdquo;]</p>
+
+  <p class="spoken">&ldquo;O Radar do Lucro usa o Farol do Lucro para classificar cada produto do seu mix. Verde, amarelo ou vermelho. Voc&ecirc; enxerga o que estava invis&iacute;vel e sabe exatamente onde agir.&rdquo;</p>
+
+  <p class="direction">[CORTE &mdash; credibilidade] [TEXTO NA TELA: &ldquo;Raphael Girardi | +25 anos | Gest&atilde;o Empresarial&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Sou Raphael Girardi, da Hands On. Com mais de 25 anos de experi&ecirc;ncia em gest&atilde;o, j&aacute; acompanhei centenas de empresas que descobriram que o problema nunca foi vendas. Era margem.&rdquo;</p>
+
+  <p class="direction">[CTA] [TEXTO FIXO: &ldquo;Aplique &rarr; link na bio&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Acesse o link e aplique para o Programa de Acelera&ccedil;&atilde;o. Leva 2 minutos e nossa equipe entra em contato em at&eacute; 24 horas.&rdquo;</p>
+</div>
+
+<!-- ==================== SCRIPT 03 ==================== -->
+<div class="page-break"></div>
+
+<h2>Script 03 &mdash; Autoridade e Resultado</h2>
+<p><span class="file-tag">rdl_video_03_prova.mp4</span> &nbsp; Dura&ccedil;&atilde;o estimada: ~80s</p>
+
+<div class="script-block">
+  <p class="direction">[TELA PRETA + TEXTO: &ldquo;+110 empresas. Mesmo problema.&rdquo;]</p>
+  <p class="direction">[C&Acirc;MERA LIGA]</p>
+
+  <p class="spoken">&ldquo;Mais de 110 empresas j&aacute; descobriram exatamente onde o lucro estava vazando. A maioria ficou surpresa com o que encontrou.&rdquo;</p>
+
+  <p class="direction">[CORTE] [DESTAQUE NA TELA: &ldquo;O problema n&atilde;o &eacute; o setor.&rdquo;]</p>
+
+  <p class="spoken">&ldquo;O maior erro que um empres&aacute;rio pode cometer &eacute; achar que margem baixa &eacute; caracter&iacute;stica do setor. Quando a gente faz o benchmarking, a realidade aparece. A empresa est&aacute; abaixo da m&eacute;dia do mercado, tem produtos com margem negativa sendo vendidos todo m&ecirc;s e uma precifica&ccedil;&atilde;o que nunca foi revisada de verdade. O problema n&atilde;o &eacute; o mercado. &Eacute; o diagn&oacute;stico que nunca foi feito.&rdquo;</p>
+
+  <p class="direction">[CORTE &mdash; solu&ccedil;&atilde;o] [TEXTO NA TELA: &ldquo;7 encontros &middot; 90 dias &middot; plano concreto&rdquo;]</p>
+
+  <p class="spoken">&ldquo;O Programa de Acelera&ccedil;&atilde;o Radar do Lucro faz esse diagn&oacute;stico em profundidade. S&atilde;o 7 encontros em 90 dias. Analisamos seu neg&oacute;cio produto a produto, comparamos seus indicadores com empresas do mesmo ramo e constru&iacute;mos um plano de a&ccedil;&atilde;o junto com voc&ecirc; para chegar a pelo menos 30% de aumento na lucratividade.&rdquo;</p>
+
+  <p class="direction">[CORTE &mdash; credibilidade] [TEXTOS SEQUENCIAIS NA TELA: &ldquo;R$500M+ sob gest&atilde;o&rdquo; / &ldquo;4,9/5 no Google&rdquo; / &ldquo;+25 anos de experi&ecirc;ncia&rdquo;]</p>
+
+  <p class="spoken">&ldquo;A Hands On hoje gere mais de 500 milh&otilde;es de reais em gest&atilde;o financeira para empresas de m&eacute;dio porte. Avalia&ccedil;&atilde;o 4,9 de 5 no Google. Mais de 25 anos de experi&ecirc;ncia no campo.&rdquo;</p>
+
+  <p class="direction">[CTA] [TEXTO FIXO: &ldquo;Aplique agora &rarr; link na bio&rdquo;]</p>
+
+  <p class="spoken">&ldquo;Se voc&ecirc; fatura acima de 100 mil reais por m&ecirc;s, acesse o link aqui, preencha o formul&aacute;rio e nossa equipe analisa seu perfil em at&eacute; 24 horas. Sem compromisso. Sem script de vendas.&rdquo;</p>
+</div>
+
+</body>
+</html>
