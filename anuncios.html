@@ -433,13 +433,16 @@
     /* =============================================
        PHOTO ELEMENTS (hidden by default)
     ============================================= */
+    /* All photo containers use background-image so html2canvas renders them correctly
+       (html2canvas does not support CSS object-fit on <img> elements) */
     .ad-photo-bg {
       display: none;
       position: absolute;
       inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 15%;
+      background-size: cover;
+      background-position: center 15%;
+      background-repeat: no-repeat;
       z-index: 0;
     }
     .ad-photo-overlay {
@@ -455,12 +458,10 @@
       width: 55%;
       height: 100%;
       overflow: hidden;
+      background-size: cover;
+      background-position: center 10%;
+      background-repeat: no-repeat;
       z-index: 0;
-    }
-    .ad-split-photo-panel img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 10%;
     }
     .ad-top-photo-panel {
       display: none;
@@ -468,18 +469,13 @@
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
+      background-size: cover;
+      background-position: center 10%;
+      background-repeat: no-repeat;
       z-index: 0;
     }
-    .ad-top-photo-panel img {
-      width: 100%;
-      object-fit: cover;
-      object-position: center 10%;
-      display: block;
-    }
-    .ad-canvas.square  .ad-top-photo-panel { height: 560px; }
+    .ad-canvas.square   .ad-top-photo-panel { height: 560px; }
     .ad-canvas.portrait .ad-top-photo-panel { height: 740px; }
-    .ad-canvas.square  .ad-top-photo-panel img { height: 560px; }
-    .ad-canvas.portrait .ad-top-photo-panel img { height: 740px; }
 
     .ad-presenter-badge {
       position: absolute;
@@ -927,13 +923,12 @@
         <div class="ad-viewport" id="viewport-square" style="height:540px;">
           <div class="scale-wrapper" id="wrapper-square" style="transform:scale(0.5);">
             <div id="ad-square" class="ad-canvas square">
-              <!-- Photo elements -->
-              <img class="ad-photo-bg" id="ad-photo-bg-1" alt="">
+              <!-- Photo elements (divs with background-image for correct html2canvas export) -->
+              <div class="ad-photo-bg" id="ad-photo-bg-1"></div>
               <div class="ad-photo-overlay"></div>
-              <div class="ad-split-photo-panel"><img id="ad-split-photo-1" alt=""></div>
+              <div class="ad-split-photo-panel" id="ad-split-photo-1"></div>
               <div class="ad-split-divider"></div>
-              <div class="ad-top-photo-panel">
-                <img id="ad-top-photo-1" alt="">
+              <div class="ad-top-photo-panel" id="ad-top-photo-1">
                 <div class="ad-presenter-badge">
                   <span class="ad-presenter-name">Raphael Girardi</span>
                   <span class="ad-presenter-title">Fundador · Hands On</span>
@@ -973,13 +968,12 @@
         <div class="ad-viewport" id="viewport-portrait" style="height:675px;">
           <div class="scale-wrapper" id="wrapper-portrait" style="transform:scale(0.5);">
             <div id="ad-portrait" class="ad-canvas portrait">
-              <!-- Photo elements -->
-              <img class="ad-photo-bg" id="ad-photo-bg-2" alt="">
+              <!-- Photo elements (divs with background-image for correct html2canvas export) -->
+              <div class="ad-photo-bg" id="ad-photo-bg-2"></div>
               <div class="ad-photo-overlay"></div>
-              <div class="ad-split-photo-panel"><img id="ad-split-photo-2" alt=""></div>
+              <div class="ad-split-photo-panel" id="ad-split-photo-2"></div>
               <div class="ad-split-divider"></div>
-              <div class="ad-top-photo-panel">
-                <img id="ad-top-photo-2" alt="">
+              <div class="ad-top-photo-panel" id="ad-top-photo-2">
                 <div class="ad-presenter-badge">
                   <span class="ad-presenter-name">Raphael Girardi</span>
                   <span class="ad-presenter-title">Fundador · Hands On</span>
@@ -1103,10 +1097,8 @@
     const adLogoTexts = [document.getElementById('ad-logo-text-1'),document.getElementById('ad-logo-text-2')];
     const adCanvases  = document.querySelectorAll('.ad-canvas');
 
-    // Photo elements per canvas
-    const photoBgs    = [document.getElementById('ad-photo-bg-1'),    document.getElementById('ad-photo-bg-2')];
-    const splitPhotos = [document.getElementById('ad-split-photo-1'), document.getElementById('ad-split-photo-2')];
-    const topPhotos   = [document.getElementById('ad-top-photo-1'),   document.getElementById('ad-top-photo-2')];
+    // Photo container IDs (now divs with background-image)
+    const photoContainerIds = ['ad-photo-bg-1','ad-photo-bg-2','ad-split-photo-1','ad-split-photo-2','ad-top-photo-1','ad-top-photo-2'];
 
     // ==============================
     // PHOTO UPLOAD
@@ -1143,10 +1135,11 @@
     });
 
     function applyPhotoToCanvases() {
-      const src = currentPhotoURL || '';
-      photoBgs.forEach(img => { img.src = src; });
-      splitPhotos.forEach(img => { img.src = src; });
-      topPhotos.forEach(img => { img.src = src; });
+      const bgVal = currentPhotoURL ? `url(${currentPhotoURL})` : '';
+      photoContainerIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.backgroundImage = bgVal;
+      });
     }
 
     // ==============================
@@ -1339,13 +1332,14 @@
 
         document.body.appendChild(clone);
 
-        // Copy all img srcs from original to clone
-        const origImgs  = element.querySelectorAll('img');
-        const cloneImgs = clone.querySelectorAll('img');
-        origImgs.forEach((origImg, i) => {
-          if (cloneImgs[i]) {
-            cloneImgs[i].src        = origImg.src;
-            cloneImgs[i].style.cssText = origImg.style.cssText;
+        // Background-image photo divs are already cloned via cloneNode(true) inline styles.
+        // Only need to explicitly copy logo <img> srcs (which html2canvas needs as attributes).
+        const origLogos  = element.querySelectorAll('.ad-logo-img');
+        const cloneLogos = clone.querySelectorAll('.ad-logo-img');
+        origLogos.forEach((orig, i) => {
+          if (cloneLogos[i]) {
+            cloneLogos[i].src        = orig.src;
+            cloneLogos[i].style.cssText = orig.style.cssText;
           }
         });
 
