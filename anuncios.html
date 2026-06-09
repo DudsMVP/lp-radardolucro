@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estúdio de Criativos — Radar do Lucro</title>
+  
+  <!-- Fontes Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- html2canvas para exportação em PNG -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    :root {
+      /* Identidade Visual do Anúncio */
+      --ad-bg: #0d0c09;
+      --ad-gold: #c8a84a;
+      --ad-creme: #ede8dc;
+      
+      /* Cores do Workspace */
+      --wp-bg: #12110e;
+      --wp-panel: #1a1915;
+      --wp-border: rgba(200, 168, 74, 0.15);
+      --wp-text: #ede8dc;
+      --wp-text-muted: #a69f92;
+      --wp-accent: #c8a84a;
+      --wp-accent-hover: #b5952f;
+      --wp-input-bg: #1f1e19;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--wp-bg);
+      color: var(--wp-text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* BARRA LATERAL - CONTROLES */
+    .sidebar {
+      width: 420px;
+      background-color: var(--wp-panel);
+      border-right: 1px solid var(--wp-border);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex-shrink: 0;
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+
+    .sidebar-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--wp-border);
+      background: linear-gradient(135deg, #1f1e19 0%, #151411 100%);
+    }
+
+    .sidebar-header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--wp-accent);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar-header h1 span {
+      background: rgba(200, 168, 74, 0.15);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      color: var(--wp-accent);
+      border: 1px solid rgba(200, 168, 74, 0.3);
+    }
+
+    .sidebar-header p {
+      font-size: 0.85rem;
+      color: var(--wp-text-muted);
+      margin-top: 6px;
+    }
+
+    .sidebar-content {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .control-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--wp-text-muted);
+    }
+
+    .control-group input[type="text"],
+    .control-group textarea,
+    .control-group select {
+      background-color: var(--wp-input-bg);
+      border: 1px solid var(--wp-border);
+      border-radius: 6px;
+      padding: 12px;
+      color: var(--wp-text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .control-group input[type="text"]:focus,
+    .control-group textarea:focus,
+    .control-group select:focus {
+      outline: none;
+      border-color: var(--wp-accent);
+      box-shadow: 0 0 0 2px rgba(200, 168, 74, 0.15);
+    }
+
+    .control-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .color-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .color-picker-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      background: var(--wp-input-bg);
+      border: 1px solid var(--wp-border);
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .color-picker-wrapper label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--wp-text-muted);
+    }
+
+    .color-picker-wrapper input[type="color"] {
+      border: none;
+      background: none;
+      width: 40px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slider-row input[type="range"] {
+      flex-grow: 1;
+      accent-color: var(--wp-accent);
+      cursor: pointer;
+    }
+
+    .slider-row span {
+      font-size: 0.85rem;
+      width: 40px;
+      text-align: right;
+      color: var(--wp-text-muted);
+    }
+
+    .btn-export-all {
+      background: var(--wp-accent);
+      color: #0d0c09;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(200, 168, 74, 0.2);
+    }
+
+    .btn-export-all:hover {
+      background: var(--wp-accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-export-all:active {
+      transform: translateY(0);
+    }
+
+    .sidebar-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--wp-border);
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--wp-text-muted);
+      background: #151411;
+    }
+
+    .sidebar-footer a {
+      color: var(--wp-accent);
+      text-decoration: none;
+    }
+
+    /* ESPAÇO DE TRABALHO - VISUALIZAÇÃO */
+    .workspace {
+      flex-grow: 1;
+      height: 100%;
+      overflow-y: auto;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      background: linear-gradient(135deg, #12110e 0%, #080806 100%);
+    }
+
+    .workspace-header {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(200, 168, 74, 0.1);
+      padding-bottom: 16px;
+    }
+
+    .workspace-title h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--wp-text);
+    }
+
+    .workspace-title p {
+      font-size: 0.9rem;
+      color: var(--wp-text-muted);
+      margin-top: 4px;
+    }
+
+    .zoom-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--wp-panel);
+      border: 1px solid var(--wp-border);
+      padding: 4px;
+      border-radius: 6px;
+    }
+
+    .zoom-btn {
+      background: none;
+      border: none;
+      color: var(--wp-text-muted);
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .zoom-btn.active, .zoom-btn:hover {
+      background: var(--wp-accent);
+      color: #0d0c09;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      width: 100%;
+      max-width: 700px;
+      padding-bottom: 80px;
+    }
+
+    .canvas-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .canvas-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: var(--wp-panel);
+      border: 1px solid var(--wp-border);
+      padding: 12px 18px;
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .canvas-card-header h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--wp-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .canvas-card-header h3 span {
+      color: var(--wp-accent);
+      font-size: 0.8rem;
+    }
+
+    .btn-download-single {
+      background: transparent;
+      border: 1px solid var(--wp-accent);
+      color: var(--wp-accent);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-download-single:hover {
+      background: var(--wp-accent);
+      color: #0d0c09;
+    }
+
+    /* CONTAINER DO ANÚNCIO (SCALED VIEWPORT) */
+    .ad-viewport {
+      overflow: hidden;
+      position: relative;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      background-color: var(--ad-bg);
+      border: 1px solid rgba(200, 168, 74, 0.1);
+      border-top: none;
+      transition: width 0.3s, height 0.3s;
+      width: 100% !important;
+    }
+
+    .scale-wrapper {
+      transform-origin: top left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* ESTILOS REAIS DO ANÚNCIO (1080x1080 / 1080x1350) */
+    .ad-canvas {
+      width: 1080px;
+      background-color: var(--ad-bg);
+      color: var(--ad-creme);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      position: relative;
+      text-align: center;
+      padding: 90px 80px 80px 80px;
+    }
+
+    .ad-canvas.square {
+      height: 1080px;
+    }
+
+    .ad-canvas.portrait {
+      height: 1350px;
+      padding: 130px 80px 100px 80px;
+    }
+
+    /* Elementos Internos do Anúncio */
+    .ad-badge-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .ad-badge {
+      display: inline-block;
+      border: 1.5px solid var(--ad-gold);
+      background-color: rgba(200, 168, 74, 0.06);
+      color: var(--ad-gold);
+      padding: 10px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      max-width: 90%;
+      line-height: 1.3;
+    }
+
+    .ad-middle-stack {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      width: 100%;
+      gap: 32px;
+    }
+
+    .ad-headline {
+      font-size: 76px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -2.5px;
+      color: var(--ad-creme);
+      margin: 0;
+      width: 100%;
+      word-wrap: break-word;
+    }
+
+    .ad-headline span.highlight {
+      color: var(--ad-gold);
+      position: relative;
+    }
+
+    .ad-subline {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--ad-creme);
+      opacity: 0.72;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .ad-bottom-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .ad-cta {
+      background-color: var(--ad-gold);
+      color: var(--ad-bg);
+      font-size: 25px;
+      font-weight: 800;
+      padding: 22px 64px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      display: inline-block;
+      margin-bottom: 50px;
+      box-shadow: 0 12px 30px rgba(200, 168, 74, 0.15);
+    }
+
+    .ad-logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .ad-logo-divider {
+      width: 120px;
+      height: 1.5px;
+      background-color: rgba(200, 168, 74, 0.2);
+    }
+
+    .ad-logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .ad-logo-img {
+      height: 32px;
+      width: auto;
+      filter: brightness(0) invert(1) opacity(0.85); /* Força a imagem a ficar creme/off-white */
+      display: none;
+    }
+
+    .ad-logo-text {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--ad-creme);
+      opacity: 0.5;
+      text-transform: uppercase;
+    }
+
+    /* Modal de Renderizando */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 12, 9, 0.85);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .loading-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(200, 168, 74, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--wp-accent);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsivo básico */
+    @media (max-width: 1024px) {
+      body {
+        flex-direction: column;
+        overflow: auto;
+        height: auto;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--wp-border);
+      }
+      .workspace {
+        height: auto;
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADING OVERLAY -->
+  <div id="loading" class="loading-overlay">
+    <div class="spinner"></div>
+    <h3 style="color: #ede8dc; font-weight: 600; font-size: 1.1rem; letter-spacing: 0.05em;">EXPORTANDO CRIATIVO EM ALTA RESOLUÇÃO...</h3>
+    <p style="color: #a69f92; font-size: 0.9rem;">Por favor, aguarde alguns segundos.</p>
+  </div>
+
+  <!-- SIDEBAR CONTROLES -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1>Estúdio de Anúncios <span>Instagram</span></h1>
+      <p>Configure a copy e exporte arquivos prontos para veiculação.</p>
+    </div>
+    
+    <div class="sidebar-content">
+      
+      <!-- Copy -->
+      <div class="control-group">
+        <label for="input-badge">Tag / Eyebrow (Topo)</label>
+        <input type="text" id="input-badge" value="EMPRESÁRIOS QUE FATURAM MAS NÃO SOBRA NADA">
+      </div>
+
+      <div class="control-group">
+        <label for="input-headline">Headline Principal</label>
+        <textarea id="input-headline">Você vende. O dinheiro some.</textarea>
+      </div>
+
+      <div class="control-group">
+        <label for="input-highlight">Palavra de Destaque (Dourado)</label>
+        <input type="text" id="input-highlight" value="some.">
+        <p style="font-size: 0.75rem; color: var(--wp-text-muted); margin-top: 2px;">
+          Esta palavra ficará destacada em dourado.
+        </p>
+      </div>
+
+      <div class="control-group">
+        <label for="input-subline">Subtítulo / Subheadline</label>
+        <textarea id="input-subline">Descubra produto a produto onde o lucro está vazando e como recuperar em 90 dias.</textarea>
+      </div>
+
+      <div class="control-group">
+        <label for="input-cta">Texto do Botão CTA</label>
+        <input type="text" id="input-cta" value="Quero Aplicar Agora">
+      </div>
+
+      <!-- Logotipo -->
+      <div class="control-group">
+        <label for="select-logo">Visualização da Logo</label>
+        <select id="select-logo">
+          <option value="text">Apenas Texto (Radar do Lucro)</option>
+          <option value="image-branca" selected>Imagem Branca (Branca.png)</option>
+          <option value="image-radar">Imagem Colorida (radar-do-lucro-aceleracao.jpeg)</option>
+          <option value="none">Ocultar Logotipo</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="input-logo-text">Texto da Logo / Rodapé</label>
+        <input type="text" id="input-logo-text" value="Radar do Lucro · Programa de Aceleração | Hands On">
+      </div>
+
+      <!-- Ajustes Visuais -->
+      <div class="control-group">
+        <label>Ajuste de Fontes (Tamanho)</label>
+        
+        <div style="display:flex; flex-direction:column; gap: 10px; margin-top: 5px;">
+          <div class="control-group">
+            <label style="font-size: 0.75rem;">Headline</label>
+            <div class="slider-row">
+              <input type="range" id="size-headline" min="40" max="90" value="76">
+              <span id="val-headline">76px</span>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label style="font-size: 0.75rem;">Subtítulo</label>
+            <div class="slider-row">
+              <input type="range" id="size-subline" min="18" max="36" value="26">
+              <span id="val-subline">26px</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paleta de Cores -->
+      <div class="control-group">
+        <label>Paleta de Cores (Ad)</label>
+        <div class="color-row">
+          <div class="color-picker-wrapper">
+            <label for="color-bg">Fundo</label>
+            <input type="color" id="color-bg" value="#0d0c09">
+          </div>
+          <div class="color-picker-wrapper">
+            <label for="color-gold">Destaque</label>
+            <input type="color" id="color-gold" value="#c8a84a">
+          </div>
+          <div class="color-picker-wrapper">
+            <label for="color-creme">Texto</label>
+            <input type="color" id="color-creme" value="#ede8dc">
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão Ação Principal -->
+      <button class="btn-export-all" id="btn-export-all">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Exportar Ambos (ZIP/PNG)
+      </button>
+
+    </div>
+
+    <div class="sidebar-footer">
+      Desenvolvido para <a href="index.html" target="_blank">Radar do Lucro</a>
+    </div>
+  </aside>
+
+  <!-- WORKSPACE VISUALIZAÇÃO -->
+  <main class="workspace">
+    <div class="workspace-header">
+      <div class="workspace-title">
+        <h2>Visualizador de Ad Estático</h2>
+        <p>Previsualize como os anúncios estáticos ficam no feed clássico e vertical do Instagram.</p>
+      </div>
+
+      <div class="zoom-controls">
+        <span style="font-size: 0.8rem; font-weight: 600; color: var(--wp-text-muted); margin-right: 8px; padding-left: 8px;">Zoom:</span>
+        <button class="zoom-btn" data-zoom="0.35">35%</button>
+        <button class="zoom-btn active" data-zoom="0.5">50%</button>
+        <button class="zoom-btn" data-zoom="0.65">65%</button>
+      </div>
+    </div>
+
+    <div class="gallery">
+      
+      <!-- CANVASES DE ANÚNCIO -->
+      <!-- 1. Quadrado (1080x1080) -->
+      <div class="canvas-container">
+        <div class="canvas-card-header">
+          <h3>Feed Quadrado <span>(1080 x 1080 px)</span></h3>
+          <button class="btn-download-single" data-target="ad-square" data-filename="radar_do_lucro_ad_1080x1080.png">Baixar PNG</button>
+        </div>
+
+        <div class="ad-viewport" id="viewport-square" style="height: 540px;">
+          <div class="scale-wrapper" id="wrapper-square" style="transform: scale(0.5);">
+            
+            <div id="ad-square" class="ad-canvas square">
+              <!-- Topo -->
+              <div class="ad-badge-container">
+                <div class="ad-badge" id="ad-badge-1">EMPRESÁRIOS QUE FATURAM MAS NÃO SOBRA NADA</div>
+              </div>
+              
+              <!-- Centro -->
+              <div class="ad-middle-stack">
+                <h2 class="ad-headline" id="ad-headline-1">Você vende. O dinheiro <span class="highlight">some.</span></h2>
+                <p class="ad-subline" id="ad-subline-1">Descubra produto a produto onde o lucro está vazando e como recuperar em 90 dias.</p>
+              </div>
+
+              <!-- Base -->
+              <div class="ad-bottom-stack">
+                <button class="ad-cta" id="ad-cta-1">Quero Aplicar Agora</button>
+                <div class="ad-logo-area">
+                  <div class="ad-logo-divider"></div>
+                  <div class="ad-logo-container">
+                    <img src="logos/Branca.png" alt="Logo" class="ad-logo-img" id="ad-logo-img-1">
+                    <span class="ad-logo-text" id="ad-logo-text-1">Radar do Lucro · Programa de Aceleração | Hands On</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Retrato Vertical (1080x1350) -->
+      <div class="canvas-container">
+        <div class="canvas-card-header">
+          <h3>Feed Vertical <span>(1080 x 1350 px)</span></h3>
+          <button class="btn-download-single" data-target="ad-portrait" data-filename="radar_do_lucro_ad_1080x1350.png">Baixar PNG</button>
+        </div>
+
+        <div class="ad-viewport" id="viewport-portrait" style="height: 675px;">
+          <div class="scale-wrapper" id="wrapper-portrait" style="transform: scale(0.5);">
+            
+            <div id="ad-portrait" class="ad-canvas portrait">
+              <!-- Topo -->
+              <div class="ad-badge-container">
+                <div class="ad-badge" id="ad-badge-2">EMPRESÁRIOS QUE FATURAM MAS NÃO SOBRA NADA</div>
+              </div>
+              
+              <!-- Centro -->
+              <div class="ad-middle-stack">
+                <h2 class="ad-headline" id="ad-headline-2">Você vende. O dinheiro <span class="highlight">some.</span></h2>
+                <p class="ad-subline" id="ad-subline-2">Descubra produto a produto onde o lucro está vazando e como recuperar em 90 dias.</p>
+              </div>
+
+              <!-- Base -->
+              <div class="ad-bottom-stack">
+                <button class="ad-cta" id="ad-cta-2">Quero Aplicar Agora</button>
+                <div class="ad-logo-area">
+                  <div class="ad-logo-divider"></div>
+                  <div class="ad-logo-container">
+                    <img src="logos/Branca.png" alt="Logo" class="ad-logo-img" id="ad-logo-img-2">
+                    <span class="ad-logo-text" id="ad-logo-text-2">Radar do Lucro · Programa de Aceleração | Hands On</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Configurações e Atualização em Tempo Real
+    const inputBadge = document.getElementById('input-badge');
+    const inputHeadline = document.getElementById('input-headline');
+    const inputHighlight = document.getElementById('input-highlight');
+    const inputSubline = document.getElementById('input-subline');
+    const inputCta = document.getElementById('input-cta');
+    const selectLogo = document.getElementById('select-logo');
+    const inputLogoText = document.getElementById('input-logo-text');
+    
+    const sizeHeadline = document.getElementById('size-headline');
+    const sizeSubline = document.getElementById('size-subline');
+    const valHeadline = document.getElementById('val-headline');
+    const valSubline = document.getElementById('val-subline');
+
+    const colorBg = document.getElementById('color-bg');
+    const colorGold = document.getElementById('color-gold');
+    const colorCreme = document.getElementById('color-creme');
+
+    // Elementos dos Ads
+    const adBadges = [document.getElementById('ad-badge-1'), document.getElementById('ad-badge-2')];
+    const adHeadlines = [document.getElementById('ad-headline-1'), document.getElementById('ad-headline-2')];
+    const adSublines = [document.getElementById('ad-subline-1'), document.getElementById('ad-subline-2')];
+    const adCtas = [document.getElementById('ad-cta-1'), document.getElementById('ad-cta-2')];
+    const adLogoImgs = [document.getElementById('ad-logo-img-1'), document.getElementById('ad-logo-img-2')];
+    const adLogoTexts = [document.getElementById('ad-logo-text-1'), document.getElementById('ad-logo-text-2')];
+    const adCanvases = document.querySelectorAll('.ad-canvas');
+
+    function updateAds() {
+      // 1. Tag/Badge
+      adBadges.forEach(b => b.textContent = inputBadge.value);
+      
+      // 2. Headline com destaque
+      const textHeadline = inputHeadline.value;
+      const highlight = inputHighlight.value;
+      
+      if (highlight && textHeadline.includes(highlight)) {
+        // Substituição segura escapando tags html
+        const parts = textHeadline.split(highlight);
+        const html = parts.map(part => escapeHTML(part)).join(`<span class="highlight">${escapeHTML(highlight)}</span>`);
+        adHeadlines.forEach(h => h.innerHTML = html.replace(/\n/g, '<br>'));
+      } else {
+        adHeadlines.forEach(h => h.innerHTML = escapeHTML(textHeadline).replace(/\n/g, '<br>'));
+      }
+
+      // 3. Subline
+      adSublines.forEach(s => s.innerHTML = escapeHTML(inputSubline.value).replace(/\n/g, '<br>'));
+
+      // 4. CTA
+      adCtas.forEach(c => c.textContent = inputCta.value);
+
+      // 5. Logo
+      const logoType = selectLogo.value;
+      const logoText = inputLogoText.value;
+
+      adLogoTexts.forEach(t => {
+        t.textContent = logoText;
+        t.style.display = logoType === 'none' ? 'none' : 'block';
+      });
+
+      adLogoImgs.forEach(img => {
+        if (logoType === 'image-branca') {
+          img.src = 'logos/Branca.png';
+          img.style.display = 'block';
+          img.style.filter = 'brightness(0) invert(1) opacity(0.85)';
+        } else if (logoType === 'image-radar') {
+          img.src = 'logos/radar-do-lucro-aceleracao.jpeg';
+          img.style.display = 'block';
+          img.style.filter = 'none'; // mantém cores originais
+        } else {
+          img.style.display = 'none';
+        }
+      });
+
+      // Tamanhos das Fontes
+      adHeadlines.forEach(h => h.style.fontSize = `${sizeHeadline.value}px`);
+      adSublines.forEach(s => s.style.fontSize = `${sizeSubline.value}px`);
+      valHeadline.textContent = `${sizeHeadline.value}px`;
+      valSubline.textContent = `${sizeSubline.value}px`;
+
+      // Cores
+      const adBgVal = colorBg.value;
+      const adGoldVal = colorGold.value;
+      const adCremeVal = colorCreme.value;
+
+      // Atualiza variáveis CSS em cada canvas
+      adCanvases.forEach(canvas => {
+        canvas.style.setProperty('--ad-bg', adBgVal);
+        canvas.style.setProperty('--ad-gold', adGoldVal);
+        canvas.style.setProperty('--ad-creme', adCremeVal);
+      });
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+
+    // Event Listeners para inputs
+    [inputBadge, inputHeadline, inputHighlight, inputSubline, inputCta, selectLogo, inputLogoText].forEach(el => {
+      el.addEventListener('input', updateAds);
+    });
+    
+    selectLogo.addEventListener('change', updateAds);
+
+    sizeHeadline.addEventListener('input', updateAds);
+    sizeSubline.addEventListener('input', updateAds);
+
+    [colorBg, colorGold, colorCreme].forEach(el => {
+      el.addEventListener('input', updateAds);
+    });
+
+    // CONTROLES DE ZOOM
+    const zoomBtns = document.querySelectorAll('.zoom-btn');
+    const viewports = {
+      square: document.getElementById('viewport-square'),
+      portrait: document.getElementById('viewport-portrait')
+    };
+    const wrappers = {
+      square: document.getElementById('wrapper-square'),
+      portrait: document.getElementById('wrapper-portrait')
+    };
+
+    zoomBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        zoomBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const zoom = parseFloat(btn.dataset.zoom);
+
+        viewports.square.style.height = `${1080 * zoom}px`;
+        wrappers.square.style.transform = `scale(${zoom})`;
+
+        viewports.portrait.style.height = `${1350 * zoom}px`;
+        wrappers.portrait.style.transform = `scale(${zoom})`;
+      });
+    });
+
+    // EXPORTAÇÃO INDIVIDUAL
+    const singleExportBtns = document.querySelectorAll('.btn-download-single');
+    singleExportBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.target;
+        const filename = btn.dataset.filename;
+        exportAd(targetId, filename);
+      });
+    });
+
+    // EXPORTAÇÃO DUPLA
+    document.getElementById('btn-export-all').addEventListener('click', async () => {
+      showLoading(true);
+      try {
+        await exportAd('ad-square', 'radar_do_lucro_ad_1080x1080.png', false);
+        // Pequena pausa para evitar bloqueio do navegador
+        await new Promise(resolve => setTimeout(resolve, 500));
+        await exportAd('ad-portrait', 'radar_do_lucro_ad_1080x1350.png', false);
+      } catch (err) {
+        alert('Erro ao exportar um ou mais criativos: ' + err.message);
+      } finally {
+        showLoading(false);
+      }
+    });
+
+    function showLoading(visible) {
+      document.getElementById('loading').classList.toggle('visible', visible);
+    }
+
+    function exportAd(elementId, filename, triggerLoading = true) {
+      return new Promise((resolve, reject) => {
+        if (triggerLoading) showLoading(true);
+
+        const element = document.getElementById(elementId);
+        
+        // 1. Clona o elemento original
+        const clone = element.cloneNode(true);
+        
+        // 2. Remove transformações e posiciona fora da tela para capturar em escala 1:1 real
+        clone.style.transform = 'none';
+        clone.style.position = 'fixed';
+        clone.style.top = '0';
+        clone.style.left = '0';
+        clone.style.zIndex = '-9999';
+        clone.style.margin = '0';
+        
+        // Força tamanho correto no clone
+        if (elementId === 'ad-square') {
+          clone.style.width = '1080px';
+          clone.style.height = '1080px';
+        } else {
+          clone.style.width = '1080px';
+          clone.style.height = '1350px';
+        }
+        
+        document.body.appendChild(clone);
+        
+        // Garante que todas as imagens de logo do clone herdem a URL do original
+        const origImgs = element.querySelectorAll('img');
+        const cloneImgs = clone.querySelectorAll('img');
+        for (let i = 0; i < origImgs.length; i++) {
+          if (origImgs[i].style.display !== 'none') {
+            cloneImgs[i].src = origImgs[i].src;
+            cloneImgs[i].style.display = origImgs[i].style.display;
+            cloneImgs[i].style.filter = origImgs[i].style.filter;
+          }
+        }
+
+        // Aguarda carregamento das fontes do sistema
+        document.fonts.ready.then(() => {
+          // Atraso curto para que tudo termine de rasterizar no DOM do clone
+          setTimeout(() => {
+            html2canvas(clone, {
+              width: elementId === 'ad-square' ? 1080 : 1080,
+              height: elementId === 'ad-square' ? 1080 : 1350,
+              scale: 1, // Escala 1:1 exata (1080px de largura)
+              useCORS: true,
+              allowTaint: true,
+              backgroundColor: getComputedStyle(element).getPropertyValue('--ad-bg').trim(),
+              logging: false
+            }).then(canvas => {
+              // Remove clone
+              document.body.removeChild(clone);
+              
+              // Dispara Download do PNG
+              const link = document.createElement('a');
+              link.download = filename;
+              link.href = canvas.toDataURL('image/png');
+              link.click();
+              
+              if (triggerLoading) showLoading(false);
+              resolve();
+            }).catch(err => {
+              document.body.removeChild(clone);
+              if (triggerLoading) showLoading(false);
+              reject(err);
+            });
+          }, 300);
+        });
+      });
+    }
+
+    // Inicialização
+    window.addEventListener('DOMContentLoaded', () => {
+      updateAds();
+    });
+  </script>
+</body>
+</html>
