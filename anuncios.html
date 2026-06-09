@@ -100,6 +100,70 @@
       gap: 20px;
     }
 
+    .preset-switcher {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .preset-switcher label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--wp-text-muted);
+    }
+
+    .preset-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .btn-preset {
+      background: var(--wp-input-bg);
+      border: 1px solid var(--wp-border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: var(--wp-text-muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-preset:hover {
+      border-color: var(--wp-accent);
+      color: var(--wp-text);
+    }
+
+    .btn-preset.active {
+      border-color: var(--wp-accent);
+      background: rgba(200, 168, 74, 0.08);
+      color: var(--wp-accent);
+    }
+
+    .btn-preset .preset-num {
+      background: rgba(200, 168, 74, 0.15);
+      color: var(--wp-accent);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .preset-divider {
+      height: 1px;
+      background: var(--wp-border);
+      margin: 4px 0;
+    }
+
     .control-group {
       display: flex;
       flex-direction: column;
@@ -593,7 +657,25 @@
     </div>
     
     <div class="sidebar-content">
-      
+
+      <!-- Seletor de Criativo -->
+      <div class="preset-switcher">
+        <label>Criativo</label>
+        <div class="preset-btns">
+          <button class="btn-preset active" data-preset="1">
+            <span class="preset-num">01</span> Ângulo Dor
+          </button>
+          <button class="btn-preset" data-preset="2">
+            <span class="preset-num">02</span> Quebra de Crença
+          </button>
+          <button class="btn-preset" data-preset="3">
+            <span class="preset-num">03</span> Prova Social
+          </button>
+        </div>
+      </div>
+
+      <div class="preset-divider"></div>
+
       <!-- Copy -->
       <div class="control-group">
         <label for="input-badge">Tag / Eyebrow (Topo)</label>
@@ -799,6 +881,36 @@
   </main>
 
   <script>
+    // Presets dos 3 criativos
+    const PRESETS = {
+      1: {
+        badge:     'EMPRESÁRIOS QUE FATURAM MAS NÃO SOBRA NADA',
+        headline:  'Você vende. O dinheiro some.',
+        highlight: 'some.',
+        subline:   'Descubra produto a produto onde o lucro está vazando e como recuperar em 90 dias.',
+        cta:       'Quero Aplicar Agora',
+        filename:  'rdl_criativo_01_dor',
+      },
+      2: {
+        badge:     'ATENÇÃO',
+        headline:  'Vender mais não resolve. O problema não é volume.',
+        highlight: 'não é volume.',
+        subline:   'É o que sobra de cada venda. O Radar do Lucro mostra exatamente onde está o vazamento, produto por produto.',
+        cta:       'Quero Aplicar Agora',
+        filename:  'rdl_criativo_02_quebra',
+      },
+      3: {
+        badge:     '+110 EMPRESAS JÁ PASSARAM PELO RADAR',
+        headline:  '+30% de lucro em 90 dias. Sem vender mais.',
+        highlight: '+30%',
+        subline:   'O Programa de Aceleração analisa seu negócio produto a produto e entrega um plano de ação concreto.',
+        cta:       'Quero Aplicar Agora',
+        filename:  'rdl_criativo_03_prova',
+      },
+    };
+
+    let currentFilename = PRESETS[1].filename;
+
     // Configurações e Atualização em Tempo Real
     const inputBadge = document.getElementById('input-badge');
     const inputHeadline = document.getElementById('input-headline');
@@ -951,10 +1063,9 @@
     document.getElementById('btn-export-all').addEventListener('click', async () => {
       showLoading(true);
       try {
-        await exportAd('ad-square', 'radar_do_lucro_ad_1080x1080.png', false);
-        // Pequena pausa para evitar bloqueio do navegador
+        await exportAd('ad-square',   `${currentFilename}_1080x1080.png`, false);
         await new Promise(resolve => setTimeout(resolve, 500));
-        await exportAd('ad-portrait', 'radar_do_lucro_ad_1080x1350.png', false);
+        await exportAd('ad-portrait', `${currentFilename}_1080x1350.png`, false);
       } catch (err) {
         alert('Erro ao exportar um ou mais criativos: ' + err.message);
       } finally {
@@ -1038,6 +1149,28 @@
         });
       });
     }
+
+    // Presets — troca de criativo
+    document.querySelectorAll('.btn-preset').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.btn-preset').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const p = PRESETS[btn.dataset.preset];
+        inputBadge.value     = p.badge;
+        inputHeadline.value  = p.headline;
+        inputHighlight.value = p.highlight;
+        inputSubline.value   = p.subline;
+        inputCta.value       = p.cta;
+        currentFilename      = p.filename;
+
+        // Atualiza nomes dos botões de download
+        document.querySelector('[data-target="ad-square"]').dataset.filename   = `${p.filename}_1080x1080.png`;
+        document.querySelector('[data-target="ad-portrait"]').dataset.filename = `${p.filename}_1080x1350.png`;
+
+        updateAds();
+      });
+    });
 
     // Inicialização
     window.addEventListener('DOMContentLoaded', () => {
